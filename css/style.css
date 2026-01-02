@@ -1256,3 +1256,45 @@ footer::before {
     }
 }
 
+
+/* REAL DEVICE FIXES - Force Overrides */
+
+/* 1. Ensure Header Text is NOT cut off */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 240px !important; /* Increased from 200px */
+        align-items: flex-start !important; /* Ensure content starts at top */
+    }
+    
+    /* 2. FORCE Horizontal Stats */
+    .hero-stats {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        gap: 5px !important;
+        width: 100% !important;
+        margin-top: 30px !important;
+    }
+
+    .stat-item {
+        flex: 1 1 0px !important; /* Force equal width */
+        min-width: 0 !important; /* Allow shrinking */
+        padding: 0 2px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.4rem !important; /* Slightly smaller to fit */
+        margin-bottom: 0 !important;
+    }
+    
+    .stat-item p {
+        font-size: 0.75rem !important; /* Smaller text to prevent wrapping */
+        line-height: 1.1 !important;
+        white-space: normal !important;
+    }
+}
+
