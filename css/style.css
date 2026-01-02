@@ -829,65 +829,92 @@ footer::before {
     text-align: center;
   }
 
-  /* Accreditations Mobile Fixes */
+  /* Accreditations Mobile Scroll */
   .accreditations {
     padding: 15px 0;
+    overflow: hidden;
+    /* Mask overflow */
+    box-sizing: border-box;
+  }
+
+  .accreditations .container {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
   }
 
   .logo-scroller {
-    gap: 15px;
-    flex-direction: column;
-    /* Stack them or wrap tightly? Wrap is better */
-    justify-content: center;
+    display: flex;
+    /* Ensure horizontal */
+    width: max-content;
+    /* Allow content to stretch */
+    animation: scroll-logos 20s linear infinite;
+    /* Marquee */
+    gap: 30px;
+    flex-direction: row !important;
+    /* Force row on mobile */
   }
 
   .logo-item {
-    font-size: 0.8rem !important;
-    /* Smaller font */
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+    /* Prevent wrapping */
   }
 
   .logo-item i {
     font-size: 1.2rem !important;
-    /* Smaller icons */
+  }
+}
+
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
   }
 
-  /* Hide the "Who We Are" image on mobile as requested */
-  .who-we-are-image {
-    display: none;
+  100% {
+    transform: translateX(-33.33%);
   }
 
-  /* Center Align Content on Mobile */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  .text-center-mobile {
-    text-align: center;
-  }
+  /* Scroll one-third (since we triplicated contents) */
+}
 
-  ul {
-    text-align: center;
-    list-style-position: inside;
-    /* Keeps bullets with centered text */
-  }
+/* Hide the "Who We Are" image on mobile as requested */
+.who-we-are-image {
+  display: none;
+}
 
-  /* Ensure buttons are centered */
-  .btn {
-    display: block;
-    margin: 20px auto;
-    width: fit-content;
-  }
+/* Center Align Content on Mobile */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.text-center-mobile {
+  text-align: center;
+}
 
-  /* Reset specific alignments if needed */
-  .footer-col,
-  .footer-col h4,
-  .footer-col ul {
-    text-align: center;
-    /* Ensure footer stays centered */
-  }
+ul {
+  text-align: center;
+  list-style-position: inside;
+  /* Keeps bullets with centered text */
+}
+
+/* Ensure buttons are centered */
+.btn {
+  display: block;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+/* Reset specific alignments if needed */
+.footer-col,
+.footer-col h4,
+.footer-col ul {
+  text-align: center;
+  /* Ensure footer stays centered */
+}
 }
 
 .gallery-item:hover img {
