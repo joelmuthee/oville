@@ -188,6 +188,18 @@ ul {
   color: var(--accent-color);
 }
 
+.navbar .logo img {
+  height: 60px;
+  width: auto;
+  transition: var(--transition);
+}
+
+@media (max-width: 768px) {
+  .navbar .logo img {
+    height: 40px;
+  }
+}
+
 .nav-menu {
   display: flex;
   gap: 30px;
