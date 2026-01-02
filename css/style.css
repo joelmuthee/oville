@@ -1322,17 +1322,18 @@ footer::before {
 }
 
 /* Fix Oversized Service Images on Desktop */
-@media (min-width: 769px) {
+/* Fix Oversized Service Images (Global) */
+#engineering .fade-in-up>img,
+#forensic .fade-in-up>img,
+#pm .fade-in-up>img {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
 
-  #engineering .fade-in-up>img,
-  #forensic .fade-in-up>img,
-  #pm .fade-in-up>img {
-    height: 280px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
-  }
+@media (min-width: 769px) {
 
   /* Ensure navbar is visible on desktop too */
   .navbar {
