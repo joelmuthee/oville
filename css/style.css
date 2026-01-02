@@ -1538,3 +1538,12 @@ footer::before {
   }
 }
 
+
+/* Fix Who We Are Image Width (Reduce width relative to text) */
+@media (min-width: 769px) {
+  #who-we-are .responsive-grid-2 {
+    grid-template-columns: 1.2fr 0.8fr; /* Text wider, Image narrower */
+    align-items: center;
+  }
+}
+
