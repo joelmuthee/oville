@@ -1433,8 +1433,8 @@ footer::before {
 
 @media (min-width: 769px) {
   .responsive-grid-2 {
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 50px;
+    grid-template-columns: 0.6fr 1.4fr;
+    gap: 40px;
   }
 }
 
