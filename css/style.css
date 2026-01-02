@@ -1515,3 +1515,26 @@ footer::before {
     order: 1;
   }
 }
+/* Fix Desktop Hero Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Fix Desktop Accreditations (Clean Static View) */
+@media (min-width: 969px) {
+  .logo-scroller {
+    animation: none; /* Stop scrolling */
+    justify-content: center; /* Center items */
+    width: 100% !important;
+    transform: none !important; /* Reset any transform */
+  }
+
+  /* Hide duplicates (items 5 and above) */
+  .logo-item:nth-child(n+5) {
+    display: none;
+  }
+}
+
