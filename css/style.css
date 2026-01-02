@@ -847,6 +847,39 @@ footer::before {
   .who-we-are-image {
     display: none;
   }
+
+  /* Center Align Content on Mobile */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  .text-center-mobile {
+    text-align: center;
+  }
+
+  ul {
+    text-align: center;
+    list-style-position: inside;
+    /* Keeps bullets with centered text */
+  }
+
+  /* Ensure buttons are centered */
+  .btn {
+    display: block;
+    margin: 20px auto;
+    width: fit-content;
+  }
+
+  /* Reset specific alignments if needed */
+  .footer-col,
+  .footer-col h4,
+  .footer-col ul {
+    text-align: center;
+    /* Ensure footer stays centered */
+  }
 }
 
 .gallery-item:hover img {
