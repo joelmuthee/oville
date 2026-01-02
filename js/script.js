@@ -100,38 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Navigation
-    if (prevBtn) {
-        prevBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent closing lightbox
-            let newIndex = currentIndex - 1;
-            if (newIndex < 0) newIndex = galleryItems.length - 1; // Loop
-            showImage(newIndex);
-        });
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            let newIndex = currentIndex + 1;
-            if (newIndex >= galleryItems.length) newIndex = 0; // Loop
-            showImage(newIndex);
-        });
-    }
-
-    // Keyboard navigation
+    // Keyboard navigation (Escape Only)
     document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('active')) return;
 
-        if (e.key === 'ArrowLeft') {
-            let newIndex = currentIndex - 1;
-            if (newIndex < 0) newIndex = galleryItems.length - 1;
-            showImage(newIndex);
-        } else if (e.key === 'ArrowRight') {
-            let newIndex = currentIndex + 1;
-            if (newIndex >= galleryItems.length) newIndex = 0;
-            showImage(newIndex);
-        } else if (e.key === 'Escape') {
+        if (e.key === 'Escape') {
             lightbox.classList.remove('active');
         }
     });
