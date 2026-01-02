@@ -895,8 +895,13 @@ footer::before {
     animation: scroll-logos 20s linear infinite;
     /* Marquee */
     gap: 30px;
+    gap: 30px;
     flex-direction: row !important;
-    /* Force row on mobile */
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    width: max-content !important;
+    align-items: center;
+    /* Ensure vertical alignment */
   }
 
   .logo-item {
@@ -1447,12 +1452,6 @@ footer::before {
   }
 }
 
-/* Fix Mobile Scroller */
-@media (max-width: 968px) {
-  .logo-scroller {
-    flex-wrap: nowrap !important;
-  }
-}
 
 /* Fix Desktop Order for Forensic Engineering (Alternating Layout) */
 @media (min-width: 769px) {
