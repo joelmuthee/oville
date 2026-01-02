@@ -1265,11 +1265,15 @@ footer::before {
 
 /* 1. Ensure Header Text is NOT cut off */
 @media (max-width: 768px) {
+  .navbar {
+    display: flex !important;
+    /* RESTORED: User needs hamburger icon */
+  }
+
   .hero {
-    padding-top: 150px !important;
-    /* Reduced from 240px to balance space */
+    padding-top: 100px !important;
+    /* REDUCED per user feedback (was 150px) */
     align-items: flex-start !important;
-    /* Ensure content starts at top */
   }
 
   /* 2. FORCE Horizontal Stats */
@@ -1285,9 +1289,7 @@ footer::before {
 
   .stat-item {
     flex: 1 1 0px !important;
-    /* Force equal width */
     min-width: 0 !important;
-    /* Allow shrinking */
     padding: 0 2px !important;
     display: flex !important;
     flex-direction: column !important;
@@ -1296,14 +1298,29 @@ footer::before {
 
   .stat-item h3 {
     font-size: 1.2rem !important;
-    /* Reduced for better fit */
     margin-bottom: 0 !important;
   }
 
   .stat-item p {
     font-size: 0.7rem !important;
-    /* Smaller text */
     line-height: 1.1 !important;
     white-space: normal !important;
+  }
+}
+
+/* Fix Oversized Service Images on Desktop */
+@media (min-width: 769px) {
+
+  #engineering .fade-in-up>img,
+  #forensic .fade-in-up>img,
+  #pm .fade-in-up>img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Ensure navbar is visible on desktop too */
+  .navbar {
+    display: flex !important;
   }
 }
