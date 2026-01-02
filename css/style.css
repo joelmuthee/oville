@@ -1406,3 +1406,26 @@ footer::before {
     }
 }
 
+
+/* Fixed Responsive Grid */
+.responsive-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .responsive-grid-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+}
+
+/* Fix Mobile Scroller */
+@media (max-width: 968px) {
+  .logo-scroller {
+    flex-wrap: nowrap !important;
+  }
+}
+
