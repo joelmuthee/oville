@@ -915,6 +915,16 @@ ul {
   text-align: center;
   /* Ensure footer stays centered */
 }
+
+/* Ensure icons are centered on mobile */
+.philosophy-icon,
+.service-icon,
+.info-icon {
+  display: inline-block;
+  /* Support text-align center from parent */
+  margin: 0 auto 20px auto;
+  /* Force centering if block */
+}
 }
 
 .gallery-item:hover img {
