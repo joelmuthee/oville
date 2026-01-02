@@ -1212,3 +1212,47 @@ footer::before {
     }
 }
 
+
+/* Hero Stats - Horizontal Alignment (Universal/Mobile-First) */
+.hero-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* items top aligned */
+    width: 100%;
+    margin-top: 40px;
+    gap: 10px;
+    flex-direction: row; /* Explicitly horizontal */
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-item h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    color: white; 
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Ensure font sizes scale down on very small screens */
+@media (max-width: 400px) {
+    .stat-item h3 {
+        font-size: 1.5rem;
+    }
+    .stat-item p {
+        font-size: 0.8rem;
+    }
+}
+
