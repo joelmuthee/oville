@@ -1439,6 +1439,11 @@ footer::before {
     grid-template-columns: 0.6fr 1.4fr;
     gap: 40px;
   }
+
+  /* Reverse columns for the middle section (Text First, Image Second) */
+  #forensic .responsive-grid-2 {
+    grid-template-columns: 1.4fr 0.6fr;
+  }
 }
 
 /* Fix Mobile Scroller */
