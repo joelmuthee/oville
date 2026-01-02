@@ -1453,3 +1453,13 @@ footer::before {
     flex-wrap: nowrap !important;
   }
 }
+/* Fix Desktop Order for Forensic Engineering (Alternating Layout) */
+@media (min-width: 769px) {
+  #forensic .responsive-grid-2 .fade-in-up:first-child {
+    order: 2;
+  }
+  #forensic .responsive-grid-2 .service-content {
+    order: 1;
+  }
+}
+
