@@ -1327,9 +1327,11 @@ footer::before {
   #engineering .fade-in-up>img,
   #forensic .fade-in-up>img,
   #pm .fade-in-up>img {
-    max-height: 350px;
+    height: 280px;
     width: 100%;
     object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
   }
 
   /* Ensure navbar is visible on desktop too */
