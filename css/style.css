@@ -771,15 +771,81 @@ footer::before {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .page-header {
-    height: 350px;
+    height: 300px;
+    /* Reduced height for mobile pages */
   }
 
   .page-header h1 {
     font-size: 2.5rem;
   }
 
-  .page-header p {
-    font-size: 1rem;
+  /* Hero Section Mobile Fixes */
+  .hero {
+    height: auto;
+    /* Allow auto height */
+    min-height: 85vh;
+    /* Ensure it covers most of screen */
+    padding-top: 100px;
+    /* Add space for fixed navbar */
+    padding-bottom: 60px;
+    background-position: center top;
+    /* Ensure image is visible */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem !important;
+    /* Smaller accessible font */
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem !important;
+  }
+
+  .hero-content .btn {
+    display: block;
+    /* Stack buttons */
+    width: 100%;
+    margin: 10px 0 0 0 !important;
+    /* Reset margin and spacing */
+    text-align: center;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    /* Allow stats to wrap */
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .stat-item {
+    flex: 1 1 40%;
+    /* 2 per row */
+  }
+
+  /* Accreditations Mobile Fixes */
+  .accreditations {
+    padding: 20px 0;
+  }
+
+  .logo-scroller {
+    gap: 20px;
+    /* Reduces gap */
+  }
+
+  .logo-item {
+    font-size: 0.9rem;
+    /* Smaller font */
+  }
+
+  .logo-item i {
+    font-size: 1.5rem;
+    /* Smaller icons */
+  }
+
+  /* Hide the "Who We Are" image on mobile as requested */
+  .who-we-are-image {
+    display: none;
   }
 }
 
