@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <title>Contact Us | Oville Associates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            background: #f8f9fa;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(7, 175, 223, 0.1);
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Oville Associates Logo" style="height: 60px;">
+            </a>
+            <div class="nav-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#story" class="dropdown-item">Our Story</a>
+                        <a href="about.html#team" class="dropdown-item">The Team</a>
+                        <a href="about.html#compliance" class="dropdown-item">Compliance</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html#engineering" class="dropdown-item">Civil & Structural</a>
+                        <a href="services.html#forensic" class="dropdown-item">Forensic Engineering</a>
+                        <a href="services.html#pm" class="dropdown-item">Project Management</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="portfolio.html" class="nav-link">Portfolio <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="portfolio.html#featured" class="dropdown-item">Featured Projects</a>
+                        <a href="portfolio.html#clients" class="dropdown-item">Client List</a>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-accent" style="padding: 8px 20px;">Get Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header" style="background-image: url('assets/images/hero.jpg');">
+        <div class="container text-center">
+            <h1 class="fade-in-up">Get in Touch</h1>
+            <p class="fade-in-up">We'd love to hear about your project.</p>
+        </div>
+        <!-- Bottom Curve -->
+        <div class="header-curve">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+    <section class="section-padding">
+        <div class="container">
+            <!-- Unified Contact Card -->
+            <div class="contact-container fade-in-up">
+
+                <!-- Left Side: Info & Text -->
+                <div class="contact-info-side">
+                    <h3>Let's Start a Conversation</h3>
+                    <p>We are here to assist you with your civil and structural engineering needs. Reach out to us
+                        for enquiries, quotes, or just to say hello.</p>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-content">
+                            <h5>Visit Us</h5>
+                            <p>Milimani, Jakaya Kikwete Road,<br>Pergola Flats, Town House no. 12</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <div class="info-content">
+                            <h5>Call Us</h5>
+                            <p>+254 720 544 343</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info-content">
+                            <h5>Email Us</h5>
+                            <p>info@ovilleassociates.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Form -->
+                <div class="contact-form-side">
+                    <iframe src="https://link.essenceautomations.com/widget/form/8GRTYNN5pytwAzUtwkwi"
+                        style="width:100%; height:100%; border:none;" id="inline-8GRTYNN5pytwAzUtwkwi"
+                        data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+                        data-activation-type="alwaysActivated" data-activation-value=""
+                        data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Contact Us"
+                        data-height="600" data-layout-iframe-id="inline-8GRTYNN5pytwAzUtwkwi"
+                        data-form-id="8GRTYNN5pytwAzUtwkwi" title="Contact Us">
+                    </iframe>
+                    <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <section>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.247854614264!2d36.7865!3d-1.2882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10aaf4b5c777%3A0x6e8a002888a77a94!2sJakaya%20Kikwete%20Rd%2C%20Nairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 20px; display: inline-block;">
+                        <img src="assets/images/logo.png" alt="Oville Associates Logo" style="height: 60px;">
+                    </a>
+                    <p style="color: #ccc;">Leading the way in Civil & Structural Engineering with innovation and
+                        integrity.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt text-accent"></i> Milimani, Jakaya Kikwete Road</li>
+                        <li><i class="fas fa-phone text-accent"></i> +254 720 544 343</li>
+                        <li><i class="fas fa-envelope text-accent"></i> info@ovilleassociates.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> Oville Associates. All Rights Reserved. | Designed by <a
+                    href="https://essenceautomations.com/" target="_blank">Essence Automations</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="https://widgets.leadconnectorhq.com/loader.js"
+        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+        data-widget-id="695781bbe3cb111b8ef7e5d9">
+        </script>
+</body>
+
+</html>

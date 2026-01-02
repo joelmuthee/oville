@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <title>Oville Associates | Civil & Structural Engineers Kenya</title>
+    <meta name="description"
+        content="Oville Associates is a premier engineering firm in Kenya specializing in Civil, Structural, and Forensic Engineering. Delivering quality, cost-effective, and sustainable solutions since 2015.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Home Specific Styles */
+        .hero {
+            background: linear-gradient(rgba(38, 42, 105, 0.9), rgba(15, 17, 46, 0.9)), url('assets/images/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--bg-light), transparent);
+        }
+
+        .hero-content h1 {
+            color: white;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 30px;
+        }
+
+        .stat-item h3 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        .stat-item p {
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        /* Accreditations */
+        .accreditations {
+            background: var(--bg-off-white);
+            padding: 40px 0;
+            overflow: hidden;
+        }
+
+        .logo-scroller {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.7;
+            flex-wrap: wrap;
+        }
+
+        .logo-item {
+            font-weight: 700;
+            color: #888;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-item i {
+            font-size: 2rem;
+        }
+
+        /* Map Section */
+        .map-section {
+            height: 400px;
+            width: 100%;
+            background-color: #eee;
+        }
+
+        .contact-cta {
+            padding: 80px 0;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-cta h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact-cta p {
+            color: #ccc;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Oville Associates Logo" style="height: 60px;">
+            </a>
+
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#story" class="dropdown-item">Our Story</a>
+                        <a href="about.html#team" class="dropdown-item">The Team</a>
+                        <a href="about.html#compliance" class="dropdown-item">Compliance</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html#engineering" class="dropdown-item">Civil & Structural</a>
+                        <a href="services.html#forensic" class="dropdown-item">Forensic Engineering</a>
+                        <a href="services.html#pm" class="dropdown-item">Project Management</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="portfolio.html" class="nav-link">Portfolio <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="portfolio.html#featured" class="dropdown-item">Featured Projects</a>
+                        <a href="portfolio.html#clients" class="dropdown-item">Client List</a>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-accent" style="padding: 8px 20px;">Get Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h4>World-Class Engineering</h4>
+                <h1>Building the Future with <br><span class="text-accent">Precision & Integrity</span></h1>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #ccc; max-width: 600px;">
+                    Providing innovative, cost-effective, and sustainable Civil & Structural Engineering solutions since
+                    2015.
+                </p>
+                <a href="services.html" class="btn btn-primary"
+                    style="background: var(--accent-color); border-color: var(--accent-color);">Our Services</a>
+                <a href="portfolio.html" class="btn btn-primary"
+                    style="margin-left: 20px; background: transparent; border-color: white;">View Portfolio</a>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>100+</h3>
+                        <p>Successful Projects</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p>Client Satisfaction</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Accreditations -->
+    <section class="accreditations">
+        <div class="container">
+            <div class="logo-scroller">
+                <div class="logo-item" title="Engineers Board of Kenya"><i class="fas fa-certificate text-accent"></i>
+                    EBK Certified</div>
+                <div class="logo-item" title="Kenya Green Building Society"><i class="fas fa-leaf text-accent"></i>
+                    Green Building Society</div>
+                <div class="logo-item" title="Institution of Engineers of Kenya"><i
+                        class="fas fa-award text-accent"></i> IEK Member</div>
+                <div class="logo-item" title="NCA"><i class="fas fa-hard-hat text-accent"></i> NCA Registered</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro / Ethos -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="fade-in-up">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                    <div>
+                        <h4 class="text-accent">Who We Are</h4>
+                        <h2>Engineering Excellence Tailored to Your Needs</h2>
+                        <p>Oville Associates is a leading Civil and Structural Engineering firm dedicated to delivering
+                            high-quality, sustainable solution for the built environment. We combine technical expertise
+                            with a commitment to client satisfaction.</p>
+                        <p>From complex structural designs to forensic investigations, our team ensures every project
+                            meets the highest standards of safety and efficiency.</p>
+                        <a href="about.html" class="btn btn-primary" style="margin-top: 20px;">Read Our Story</a>
+                    </div>
+                    <div>
+                        <img src="assets/images/engineering_team.jpg" alt="Modern Building"
+                            style="width: 100%; border-radius: 20px; box-shadow: var(--card-shadow);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding" style="background-color: var(--bg-off-white);">
+        <div class="container">
+            <div class="text-center fade-in-up" style="margin-bottom: 60px;">
+                <h4 class="text-accent">What We Do</h4>
+                <h2>Our Services</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: #666;">Comprehensive engineering solutions tailored
+                    to meet the unique demands of every project.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card fade-in-up">
+                    <i class="fas fa-city service-icon"></i>
+                    <h3>Civil & Structural</h3>
+                    <p>Design and analysis of buildings, bridges, and infrastructure with a focus on safety and
+                        sustainability.</p>
+                    <a href="services.html#engineering" class="learn-more">Learn More <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card fade-in-up" style="transition-delay: 0.2s;">
+                    <i class="fas fa-search-plus service-icon"></i>
+                    <h3>Forensic Engineering</h3>
+                    <p>Expert investigation of structural failures, distress, and performance issues to determine root
+                        causes.</p>
+                    <a href="services.html#forensic" class="learn-more">Learn More <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card fade-in-up" style="transition-delay: 0.4s;">
+                    <i class="fas fa-tasks service-icon"></i>
+                    <h3>Project Management</h3>
+                    <p>End-to-end management of construction projects, ensuring timely delivery within budget and scope.
+                    </p>
+                    <a href="services.html#pm" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding" style="background-color: var(--bg-off-white);">
+        <div class="container">
+            <div class="text-center fade-in-up" style="margin-bottom: 50px;">
+                <h4 class="text-accent">Our Portfolio</h4>
+                <h2>Featured Projects</h2>
+                <p>A glimpse into our diverse range of engineering projects.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Batch 5 -->
+
+
+
+
+
+
+                <!-- Project 02: Windy Ridge -->
+
+
+                <!-- Project 06: Kunde Road -->
+                <div class="gallery-item fade-in-up" style="transition-delay: 0.1s;">
+                    <img src="assets/images/projects/kunde_road_residential.jpg"
+                        alt="Residential Development on Kunde Road">
+                    <div class="gallery-overlay">
+                        <h5>Residential Development on Kunde Road, Lavington</h5>
+                        <p>This is a high-end residential development in Nairobi County</p>
+                    </div>
+                </div>
+
+                <!-- Project 08: Kozi -->
+                <div class="gallery-item fade-in-up" style="transition-delay: 0.3s;">
+                    <img src="assets/images/projects/kozi_render.jpg" alt="Kozi Suites">
+                    <div class="gallery-overlay">
+                        <h5>Kozi Suites, Syokimau</h5>
+                        <p>12 storey furnished residential apartments</p>
+                    </div>
+                </div>
+
+                <!-- Project 11: Muriasi Bridge -->
+                <div class="gallery-item fade-in-up" style="transition-delay: 0.2s;">
+                    <img src="assets/images/projects/muriasi_bridge.jpg" alt="Muriasi Bridge">
+                    <div class="gallery-overlay">
+                        <h5>Muriasi Bridge</h5>
+                        <p>This is 36m span bridge across Sondu River.</p>
+                    </div>
+                </div>
+
+                <!-- Project 12: Ammars -->
+                <div class="gallery-item fade-in-up" style="transition-delay: 0.3s;">
+                    <img src="assets/images/projects/construction_3.jpg" alt="Ammars Heights">
+                    <div class="gallery-overlay">
+                        <h5>Ammars Heights Development</h5>
+                        <p>9 Storey Hotel Apartment Building, Juba</p>
+                    </div>
+                </div>
+
+                <!-- Project 13: Sewerline -->
+
+
+                <!-- Project 14: St Christophers -->
+                <div class="gallery-item fade-in-up" style="transition-delay: 0.1s;">
+                    <img src="assets/images/projects/school_entrance_stairs.jpg" alt="St. Christophers School">
+                    <div class="gallery-overlay">
+                        <h5>St. Christophers Intl School</h5>
+                        <p>Infrastructure & refurbishment</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!-- Project 16: Adrian (Generic: adrian_building) -->
+
+
+                <!-- Project 17: Naivas (Generic: warehouse) -->
+
+
+
+
+
+
+                <!-- Project: Cafeteria Hall -->
+                <div class="gallery-item fade-in-up">
+                    <img src="assets/images/projects/cafeteria_hall_construction.png" alt="Cafeteria Hall Construction">
+                    <div class="gallery-overlay">
+                        <h5>Cafeteria Hall Construction</h5>
+                        <p>Construction of School Assembly Hall</p>
+                    </div>
+                </div>
+
+                <!-- Project: Office Block at Gitaru -->
+                <div class="gallery-item fade-in-up" style="transition-delay: 0.1s;">
+                    <img src="assets/images/projects/adrian_office_block.jpg" alt="Office Block at Gitaru">
+                    <div class="gallery-overlay">
+                        <h5>Office Block at Gitaru, Kikuyu</h5>
+                        <p>This is a new 7 storey office block</p>
+                    </div>
+                </div>
+
+                <!-- Project: Tong Piny Apartments -->
+                <div class="gallery-item fade-in-up" style="transition-delay: 0.2s;">
+                    <img src="assets/images/projects/tong_piny_apartments.png" alt="Tong Piny Apartments">
+                    <div class="gallery-overlay">
+                        <h5>Tong Piny Residential Apartments, Juba</h5>
+                        <p>This is a 7-storey residential apartment building</p>
+                    </div>
+                </div>
+
+                <!-- Project: Sebco Heights -->
+                <div class="gallery-item fade-in-up hidden-item" style="transition-delay: 0.3s;">
+                    <img src="assets/images/projects/sebco_heights.png" alt="Sebco Heights">
+                    <div class="gallery-overlay">
+                        <h5>Sebco Heights</h5>
+                        <p>A 12 storey residential apartment</p>
+                    </div>
+                </div>
+
+                <!-- Project: Symphony Hotel -->
+                <div class="gallery-item fade-in-up hidden-item">
+                    <img src="assets/images/projects/symphony_hotel.jpg" alt="Symphony Hotel, Naivasha">
+                    <div class="gallery-overlay">
+                        <h5>Symphony Hotel, Naivasha</h5>
+                        <p>This is a 4 storey 41 room hotel building in Naivasha Town</p>
+                    </div>
+                </div>
+
+                <!-- Project: Kitusuru Town Houses -->
+                <div class="gallery-item fade-in-up hidden-item" style="transition-delay: 0.1s;">
+                    <img src="assets/images/projects/kitusuru_town_houses.jpg" alt="Kitusuru Town Houses">
+                    <div class="gallery-overlay">
+                        <h5>Kitusuru Town Houses</h5>
+                        <p>4 no town houses in Kitusuru (550m2 each) on a steeply sloping site</p>
+                    </div>
+                </div>
+
+                <!-- Project: Montessori Kyuna -->
+                <div class="gallery-item fade-in-up hidden-item" style="transition-delay: 0.2s;">
+                    <img src="assets/images/projects/montessori_kyuna.jpg" alt="Montessori Learning Centre, Kyuna Road">
+                    <div class="gallery-overlay">
+                        <h5>Montessori Learning Centre, Kyuna Road</h5>
+                        <p>Preparatory school construction with classrooms, ablution block, admin block, pool & sports
+                            facilities</p>
+                    </div>
+                </div>
+
+                <!-- Project: Montessori Westlands -->
+                <div class="gallery-item fade-in-up hidden-item" style="transition-delay: 0.3s;">
+                    <img src="assets/images/projects/montessori_westlands.jpg"
+                        alt="Montessori Learning Centre, Westlands">
+                    <div class="gallery-overlay">
+                        <h5>Montessori Learning Centre, Westlands</h5>
+                        <p>Educational facility construction</p>
+                    </div>
+                </div>
+
+                <!-- Project: Telkom Kenya PEACE Station -->
+                <div class="gallery-item fade-in-up hidden-item">
+                    <img src="assets/images/projects/telkom_peace_station.png"
+                        alt="Telkom Kenya PEACE Station at Nyali, Mombasa">
+                    <div class="gallery-overlay">
+                        <h5>Telkom Kenya PEACE Station at Nyali, Mombasa</h5>
+                        <p>Refurbishments and Alterations of an Existing Building to serve as a Landing Station for the
+                            PEACE Submarine Cable by Telkom Kenya</p>
+                    </div>
+                </div>
+
+                <!-- Project: Sewerline and Waterline -->
+                <div class="gallery-item fade-in-up hidden-item" style="transition-delay: 0.1s;">
+                    <img src="assets/images/projects/sewerline_waterline_witeithie.png"
+                        alt="Sewerline and Waterline for IPS(K) at Witeithie">
+                    <div class="gallery-overlay">
+                        <h5>Sewerline and Waterline for IPS(K) at Witeithie</h5>
+                        <p>The project includes a 1.6km waterline and 0.6km sewerline to serve an industrial property
+                            that is earmarked for development.</p>
+                    </div>
+                </div>
+
+                <!-- Project: Ambassadorial Twin Homes -->
+                <div class="gallery-item fade-in-up hidden-item" style="transition-delay: 0.2s;">
+                    <img src="assets/images/projects/ambassadorial_twin_homes.png"
+                        alt="Ambassadorial Twin Homes, Runda">
+                    <div class="gallery-overlay">
+                        <h5>Ambassadorial Twin Homes, Runda</h5>
+                        <p>2 No. Residential Houses developed on Eliud Mathu Street, Runda</p>
+                    </div>
+                </div>
+
+                <!-- Project: Windy Ridge Access Road -->
+                <div class="gallery-item fade-in-up hidden-item" style="transition-delay: 0.3s;">
+                    <img src="assets/images/projects/windy_ridge_access_road.jpg"
+                        alt="100m Access Road at Windy Ridge, Karen">
+                    <div class="gallery-overlay">
+                        <h5>100m Access Road at Windy Ridge, Karen</h5>
+                        <p>Construction of cabro paved access road</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="javascript:void(0)" id="view-all-btn" class="btn btn-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Satisfied Clients -->
+    <section id="clients" class="section-padding">
+        <div class="container">
+            <div class="text-center fade-in-up">
+                <h4 class="text-accent">Trusted By</h4>
+                <h2>Our Satisfied Clients</h2>
+            </div>
+
+            <div class="clients-slider fade-in-up">
+                <div class="clients-track">
+                    <!-- Set 1 -->
+                    <div class="client-slide"><img src="assets/images/clients/citam.jpg" alt="CITAM"></div>
+                    <div class="client-slide"><img src="assets/images/clients/adrian.jpg" alt="Adrian"></div>
+                    <div class="client-slide"><img src="assets/images/clients/uap.jpg" alt="UAP"></div>
+                    <div class="client-slide"><img src="assets/images/clients/kncci.jpg" alt="KNCCI"></div>
+                    <div class="client-slide"><img src="assets/images/clients/telkom.jpg" alt="Telkom"></div>
+                    <div class="client-slide"><img src="assets/images/clients/montessori.jpg" alt="Montessori"></div>
+                    <div class="client-slide"><img src="assets/images/clients/kncci_2.jpg" alt="KNCCI"></div>
+                    <div class="client-slide"><img src="assets/images/clients/eseriani.jpg" alt="Eseriani"></div>
+                    <div class="client-slide"><img src="assets/images/clients/symphony.png" alt="Symphony"></div>
+
+                    <!-- Set 2 (Duplicate) -->
+                    <div class="client-slide"><img src="assets/images/clients/citam.jpg" alt="CITAM"></div>
+                    <div class="client-slide"><img src="assets/images/clients/adrian.jpg" alt="Adrian"></div>
+                    <div class="client-slide"><img src="assets/images/clients/uap.jpg" alt="UAP"></div>
+                    <div class="client-slide"><img src="assets/images/clients/kncci.jpg" alt="KNCCI"></div>
+                    <div class="client-slide"><img src="assets/images/clients/telkom.jpg" alt="Telkom"></div>
+                    <div class="client-slide"><img src="assets/images/clients/montessori.jpg" alt="Montessori"></div>
+                    <div class="client-slide"><img src="assets/images/clients/kncci_2.jpg" alt="KNCCI"></div>
+                    <div class="client-slide"><img src="assets/images/clients/eseriani.jpg" alt="Eseriani"></div>
+                    <div class="client-slide"><img src="assets/images/clients/symphony.png" alt="Symphony"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container fade-in-up">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Get in touch with our expert team for a consultation on your next engineering venture.</p>
+            <a href="contact.html" class="btn btn-light" style="background: white; color: var(--primary-color);">Contact
+                Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 20px; display: inline-block;">
+                        <img src="assets/images/logo.png" alt="Oville Associates Logo" style="height: 60px;">
+                    </a>
+                    <p style="color: #ccc;">Leading the way in Civil & Structural Engineering with innovation and
+                        integrity.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt text-accent"></i> Milimani, Jakaya Kikwete Road</li>
+                        <li><i class="fas fa-phone text-accent"></i> +254 720 544 343</li>
+                        <li><i class="fas fa-envelope text-accent"></i> info@ovilleassociates.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> Oville Associates. All Rights Reserved. | Designed by <a
+                    href="https://essenceautomations.com/" target="_blank">Essence Automations</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Gallery Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="https://widgets.leadconnectorhq.com/loader.js"
+        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+        data-widget-id="695781bbe3cb111b8ef7e5d9">
+        </script>
+</body>
+
+</html>

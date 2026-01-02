@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <title>Services | Oville Associates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Oville Associates Logo" style="height: 60px;">
+            </a>
+            <div class="nav-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#story" class="dropdown-item">Our Story</a>
+                        <a href="about.html#team" class="dropdown-item">The Team</a>
+                        <a href="about.html#compliance" class="dropdown-item">Compliance</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="services.html" class="nav-link active">Services <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#engineering" class="dropdown-item">Civil & Structural</a>
+                        <a href="#forensic" class="dropdown-item">Forensic Engineering</a>
+                        <a href="#pm" class="dropdown-item">Project Management</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="portfolio.html" class="nav-link">Portfolio <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="portfolio.html#featured" class="dropdown-item">Featured Projects</a>
+                        <a href="portfolio.html#clients" class="dropdown-item">Client List</a>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-accent" style="padding: 8px 20px;">Get Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header" style="background-image: url('assets/images/projects/site_construction.jpg');">
+        <div class="container text-center">
+            <h1 class="fade-in-up">Our Expertise</h1>
+            <p class="fade-in-up">Comprehensive Engineering Solutions.</p>
+        </div>
+        <!-- Bottom Curve -->
+        <div class="header-curve">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <section id="engineering" class="section-padding">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                <div class="fade-in-up">
+                    <img src="assets/images/projects/construction_2.jpg" alt="Structural Engineering"
+                        style="width: 100%; border-radius: 10px; box-shadow: var(--card-shadow);">
+                </div>
+                <div class="fade-in-up">
+                    <div style="background: var(--accent-color); width: 60px; height: 5px; margin-bottom: 20px;"></div>
+                    <h2>Civil & Structural Engineering</h2>
+                    <p>We provide full-cycle services from planning and design to construction supervision. Our
+                        structural engineers utilize state-of-the-art software to design robust, cost-effective
+                        structures.</p>
+                    <ul style="margin-top: 20px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle text-accent"></i> High-rise
+                            Building Design</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle text-accent"></i> Road &
+                            Infrastructure Planning</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle text-accent"></i> Water &
+                            Sanitation Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="forensic" class="section-padding" style="background-color: var(--bg-off-white);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                <div class="fade-in-up" style="order: 2;">
+                    <img src="assets/images/projects/steel_structure_warehouse.jpg" alt="Forensic Analysis"
+                        style="width: 100%; border-radius: 10px; box-shadow: var(--card-shadow);">
+                </div>
+                <div class="fade-in-up" style="order: 1;">
+                    <div style="background: var(--accent-color); width: 60px; height: 5px; margin-bottom: 20px;"></div>
+                    <h2>Forensic Engineering & NDT</h2>
+                    <p>We inspect and investigate material or structural failures. Using advanced Non-Destructive
+                        Testing (NDT) technology, we assess the integrity of existing structures without causing damage.
+                    </p>
+                    <ul style="margin-top: 20px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle text-accent"></i> Structural
+                            Integrity Audits</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle text-accent"></i> Ferroscan
+                            Technology (Rebar Analysis)</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle text-accent"></i> Schmidt Hammer
+                            Testing (Concrete Grade)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pm" class="section-padding">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                <div class="fade-in-up">
+                    <img src="assets/images/projects/building_skeleton_side.jpg" alt="Project Management"
+                        style="width: 100%; border-radius: 10px; box-shadow: var(--card-shadow);">
+                </div>
+                <div class="fade-in-up">
+                    <div style="background: var(--accent-color); width: 60px; height: 5px; margin-bottom: 20px;"></div>
+                    <h2>Project Management</h2>
+                    <p>Our project management team ensures your project is delivered on time, within budget, and to the
+                        highest quality standards. We handle the coordination of all design and construction teams.</p>
+                    <ul style="margin-top: 20px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle text-accent"></i> Budget &
+                            Timeline Control</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle text-accent"></i> Contractor
+                            Supervision</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle text-accent"></i> Quality
+                            Assurance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 20px; display: inline-block;">
+                        <img src="assets/images/logo.png" alt="Oville Associates Logo" style="height: 60px;">
+                    </a>
+                    <p style="color: #ccc;">Leading the way in Civil & Structural Engineering with innovation and
+                        integrity.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt text-accent"></i> Milimani, Jakaya Kikwete Road</li>
+                        <li><i class="fas fa-phone text-accent"></i> +254 720 544 343</li>
+                        <li><i class="fas fa-envelope text-accent"></i> info@ovilleassociates.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> Oville Associates. All Rights Reserved. | Designed by <a
+                    href="https://essenceautomations.com/" target="_blank">Essence Automations</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="https://widgets.leadconnectorhq.com/loader.js"
+        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+        data-widget-id="695781bbe3cb111b8ef7e5d9">
+        </script>
+</body>
+
+</html>
