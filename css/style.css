@@ -784,18 +784,22 @@ footer::before {
     height: auto;
     min-height: 100vh;
     /* Full screen height to ensure space */
-    padding-top: 140px;
-    /* MORE padding to clear navbar */
+    padding-top: 200px;
+    /* MORE padding to clear navbar - significantly increased */
     padding-bottom: 80px;
     background-position: center;
     /* Center image */
     background-size: cover;
     display: flex;
     align-items: center;
+    text-align: center;
+    /* Ensure all hero content is centered */
   }
 
   .hero-content {
     padding-top: 20px;
+    width: 100%;
+    /* Ensure full width for centering */
   }
 
   .hero-content h4 {
@@ -825,8 +829,36 @@ footer::before {
   .hero-content .btn {
     display: block;
     width: 100%;
-    margin: 15px 0 0 0 !important;
+    margin: 15px auto !important;
+    /* Force center with auto margins */
+    max-width: 300px;
+    /* Prevent overly wide buttons */
     text-align: center;
+  }
+
+  /* Reset flex alignment for icons */
+  .service-card,
+  .philosophy-item,
+  .info-item {
+    display: block !important;
+    /* Stack content vertically */
+    text-align: center !important;
+  }
+
+  .service-icon,
+  .philosophy-icon,
+  .info-icon {
+    float: none;
+    display: inline-flex !important;
+    /* or inline-block */
+    margin: 0 auto 15px auto !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Specific fix for contact info icons which might be flex wrappers */
+  .info-icon {
+    margin-bottom: 15px;
   }
 
   /* Accreditations Mobile Scroll */
