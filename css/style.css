@@ -718,6 +718,58 @@ footer::before {
   margin-bottom: 0;
 }
 
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  /* Center text globally */
+}
+
+/* ... (overlay rules remain if untouched) ... */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+  margin: 0 auto;
+  /* Center the container */
+  text-align: center;
+  /* Added for centering text */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  /* Center paragraph */
+  margin-right: auto;
+}
+
+.hero-btn-group {
+  display: flex;
+  justify-content: center;
+  /* Center buttons */
+  gap: 20px;
+}
+
 /* Gradient Overlay */
 .page-header::before {
   content: '';
