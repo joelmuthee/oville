@@ -189,7 +189,8 @@ ul {
 }
 
 .navbar .logo img {
-  height: 60px;
+  height: 85px;
+  /* Increased size */
   width: auto;
   transition: var(--transition);
 }
@@ -1584,172 +1585,177 @@ footer::before {
 .footer-links a[href*="maps"]:hover,
 .info-content a:hover {
   text-decoration-color: var(--accent-color);
-}/* Client Grid Gallery - Replaces Slider */
+}
+
+/* Client Grid Gallery - Replaces Slider */
 .clients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    align-items: center;
-    justify-items: center;
-    margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 50px;
 }
 
 .client-item {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 120px;
-    transition: var(--transition);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  transition: var(--transition);
 }
 
 .client-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .client-item img {
-    max-width: 100%;
-    max-height: 80px;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: var(--transition);
+  max-width: 100%;
+  max-height: 80px;
+  max-width: 100%;
+  max-height: 80px;
+  filter: none;
+  opacity: 1;
+  transition: var(--transition);
 }
 
 .client-item:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
+  /* No change needed on hover as grayscale is removed */
 }
 
 /* Team Section Read More */
 .team-bio {
-    max-height: 8.4em; /* Approx 5-6 lines */
-    overflow: hidden;
-    position: relative;
-    transition: max-height 0.5s ease;
-    text-align: left;
-    margin-top: 15px;
+  max-height: 8.4em;
+  /* Approx 5-6 lines */
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.5s ease;
+  text-align: left;
+  margin-top: 15px;
 }
 
 .team-bio.expanded {
-    max-height: 1000px; /* Large enough value */
+  max-height: 1000px;
+  /* Large enough value */
 }
 
 /* Gradient overlay for collapsed state */
 .team-bio::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: linear-gradient(transparent, white);
-    transition: opacity 0.3s ease;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(transparent, white);
+  transition: opacity 0.3s ease;
 }
 
 .team-bio.expanded::after {
-    opacity: 0;
-    pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .read-more-btn {
-    background: none;
-    border: none;
-    color: var(--accent-color);
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    margin-top: 10px;
-    padding: 0;
-    display: inline-block;
-    transition: var(--transition);
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 0;
+  display: inline-block;
+  transition: var(--transition);
 }
 
 .read-more-btn:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 .team-member-card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
-    text-align: center;
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .team-member-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .team-member-card h3 {
-    margin-bottom: 5px;
-    font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
 }
 
 .team-member-qualifications {
-    color: var(--text-grey);
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 5px;
-    font-style: italic;
+  color: var(--text-grey);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-style: italic;
 }
 
 .team-member-role {
-    color: var(--accent-color);
-    font-weight: 700;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-    text-transform: uppercase;
+  color: var(--accent-color);
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
 }
 
 
 .story-image {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
 }
 
 
 /* Service Description Read More */
 .expandable-service-desc {
-    max-height: 5em; /* Approx 3 lines */
-    overflow: hidden;
-    position: relative;
-    transition: max-height 0.5s ease;
+  max-height: 5em;
+  /* Approx 3 lines */
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.5s ease;
 }
 
 .expandable-service-desc.expanded {
-    max-height: 1000px;
+  max-height: 1000px;
 }
 
 .expandable-service-desc::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: linear-gradient(transparent, var(--bg-light));
-    transition: opacity 0.3s ease;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(transparent, var(--bg-light));
+  transition: opacity 0.3s ease;
 }
 
 .expandable-service-desc.off-white-bg::after {
-    background: linear-gradient(transparent, var(--bg-off-white));
+  background: linear-gradient(transparent, var(--bg-off-white));
 }
 
 .expandable-service-desc.expanded::after {
-    opacity: 0;
-    pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }
-
