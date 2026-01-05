@@ -1574,6 +1574,7 @@ footer::before {
 .footer-links a[href^="tel:"],
 .footer-links a[href^="mailto:"],
 .footer-links a[href*="maps"],
+.footer-links a[href*="linkedin"],
 .info-content a {
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.4);
@@ -1583,6 +1584,7 @@ footer::before {
 .footer-links a[href^="tel:"]:hover,
 .footer-links a[href^="mailto:"]:hover,
 .footer-links a[href*="maps"]:hover,
+.footer-links a[href*="linkedin"]:hover,
 .info-content a:hover {
   text-decoration-color: var(--accent-color);
 }
@@ -1616,8 +1618,6 @@ footer::before {
 }
 
 .client-item img {
-  max-width: 100%;
-  max-height: 80px;
   max-width: 100%;
   max-height: 80px;
   filter: none;
@@ -1759,6 +1759,7 @@ footer::before {
   opacity: 0;
   pointer-events: none;
 }
+
 /* Modify expandable desc for Services to default to 0 height if separate from intro */
 /* Actually, reusing the same class might be tricky if we want 0 height. 
    But 5em (approx 3 lines) is fine as a 'sneak peek' of the next paragraph too. 
@@ -1769,5 +1770,4 @@ footer::before {
    Let's assume the user wants standard 'Read More' behavior (collapse/expand). 
    I will leave CSS as is for now, as 5em provides a good teaser. 
    If I need to hide it completely, I would need a new class.
-*/
-
+*/}
