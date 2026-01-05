@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.fade-in-up');
+    const animatedElements = document.querySelectorAll('.fade-in-up, .accreditations .logo-item');
     animatedElements.forEach(el => observer.observe(el));
 
     // Gallery Lightbox

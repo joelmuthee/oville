@@ -968,26 +968,33 @@ footer::before {
     gap: 5px;
     padding: 2px;
 
-    /* Animation: Staggered Fade In Up */
+    /* Animation: Prepare for JS Trigger */
     opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  /* Initial state for JS trigger */
+  .accreditations .logo-item.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* Staggered Delays */
   .accreditations .logo-item:nth-child(1) {
-    animation-delay: 0.1s;
+    transition-delay: 0.1s;
   }
 
   .accreditations .logo-item:nth-child(2) {
-    animation-delay: 0.2s;
+    transition-delay: 0.2s;
   }
 
   .accreditations .logo-item:nth-child(3) {
-    animation-delay: 0.3s;
+    transition-delay: 0.3s;
   }
 
   .accreditations .logo-item:nth-child(4) {
-    animation-delay: 0.4s;
+    transition-delay: 0.4s;
   }
 
   .accreditations .logo-item i {
@@ -1017,16 +1024,18 @@ footer::before {
 @keyframes pulse-icon {
   0% {
     transform: scale(1);
+    color: var(--accent-color);
   }
 
   50% {
-    transform: scale(1.1);
-    color: var(--accent-light);
+    transform: scale(1.15);
+    color: #00d4ff;
+    /* Brighter pop */
   }
 
-  /* Subtle pop */
   100% {
     transform: scale(1);
+    color: var(--accent-color);
   }
 }
 
