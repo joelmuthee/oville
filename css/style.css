@@ -927,6 +927,8 @@ footer::before {
   }
 
   /* Accreditations Mobile: Static Grid */
+
+  /* Accreditations Mobile: Static Grid */
   .accreditations {
     padding: 30px 0;
     overflow: visible;
@@ -935,15 +937,16 @@ footer::before {
   .accreditations .container {
     width: 100%;
     overflow: visible;
-    padding: 0 10px;
+    padding: 0 5px;
+    /* Reduced padding */
   }
 
   .logo-scroller {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     /* 2x2 Grid */
-    gap: 15px;
-    /* Spacing between items */
+    gap: 5px;
+    /* Tighter gap */
     width: 100%;
     animation: none !important;
     /* Stop scrolling */
@@ -962,8 +965,29 @@ footer::before {
     /* Force stack */
     justify-content: flex-start;
     align-items: center !important;
-    gap: 8px;
-    padding: 5px;
+    gap: 5px;
+    padding: 2px;
+
+    /* Animation: Staggered Fade In Up */
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  /* Staggered Delays */
+  .accreditations .logo-item:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .accreditations .logo-item:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .accreditations .logo-item:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .accreditations .logo-item:nth-child(4) {
+    animation-delay: 0.4s;
   }
 
   .accreditations .logo-item i {
@@ -971,6 +995,38 @@ footer::before {
     margin-right: 0 !important;
     margin-bottom: 5px !important;
     display: block !important;
+
+    /* Animation: Pulse */
+    animation: pulse-icon 2s infinite ease-in-out;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-icon {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+    color: var(--accent-light);
+  }
+
+  /* Subtle pop */
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -982,6 +1038,30 @@ footer::before {
 
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Desktop Grid Alignment Fix */
+@media (min-width: 769px) {
+  .logo-scroller {
+    display: flex;
+    /* Default is usually flex row */
+    justify-content: space-around;
+    /* Distribute evenly */
+    align-items: flex-start;
+    /* Align tops */
+    flex-wrap: nowrap;
+    /* Prevent wrapping unless intentional */
+  }
+
+  .logo-item {
+    flex: 1;
+    /* Equal width */
+    display: flex;
+    flex-direction: column;
+    /* Stack icon and text */
+    align-items: center;
+    text-align: center;
   }
 }
 
