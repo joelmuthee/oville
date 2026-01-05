@@ -1774,7 +1774,13 @@ footer::before {
 .resource-section {
   padding: 60px 0;
   position: relative;
-  z-index: 10;
+  z-index: 9999 !important;
+  /* Nuclear z-index */
+  background: red !important;
+  /* DEBUG: Force background visibility */
+  min-height: 400px;
+  /* DEBUG: Force height */
+  display: block !important;
 }
 
 .resource-card-wrapper {
