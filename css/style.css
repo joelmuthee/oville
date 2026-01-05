@@ -1599,6 +1599,12 @@ footer::before {
   margin-top: 50px;
 }
 
+@media (max-width: 768px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .client-item {
   background: white;
   padding: 20px;
@@ -1770,4 +1776,5 @@ footer::before {
    Let's assume the user wants standard 'Read More' behavior (collapse/expand). 
    I will leave CSS as is for now, as 5em provides a good teaser. 
    If I need to hide it completely, I would need a new class.
-*/}
+*/
+}
