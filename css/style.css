@@ -1809,6 +1809,33 @@ footer::before {
   }
 }
 
+/* Ensure Resource Section is visible on mobile */
+@media (max-width: 768px) {
+  .resource-section {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    padding: 40px 15px;
+    /* Adjust padding for mobile */
+  }
+
+  .resource-card-wrapper {
+    width: 100%;
+    margin: 0;
+    border-radius: 12px;
+  }
+
+  .resource-card {
+    padding: 30px 20px;
+  }
+
+  .resource-card h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
 .resource-card {
   position: relative;
   background: var(--primary-dark);
