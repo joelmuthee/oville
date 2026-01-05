@@ -123,4 +123,20 @@ document.addEventListener('DOMContentLoaded', () => {
             viewAllBtn.style.display = 'none';
         });
     }
+
+    // Team Read More Toggle
+    const readMoreBtns = document.querySelectorAll('.read-more-btn');
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const bio = btn.previousElementSibling;
+
+            if (bio.classList.contains('expanded')) {
+                bio.classList.remove('expanded');
+                btn.textContent = 'Read More';
+            } else {
+                bio.classList.add('expanded');
+                btn.textContent = 'Read Less';
+            }
+        });
+    });
 });

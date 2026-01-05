@@ -1624,3 +1624,90 @@ footer::before {
     filter: grayscale(0%);
     opacity: 1;
 }
+
+/* Team Section Read More */
+.team-bio {
+    max-height: 8.4em; /* Approx 5-6 lines */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.team-bio.expanded {
+    max-height: 1000px; /* Large enough value */
+}
+
+/* Gradient overlay for collapsed state */
+.team-bio::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(transparent, white);
+    transition: opacity 0.3s ease;
+}
+
+.team-bio.expanded::after {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.read-more-btn:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.team-member-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-member-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.team-member-qualifications {
+    color: var(--text-grey);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+.team-member-role {
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
