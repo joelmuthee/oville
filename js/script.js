@@ -50,64 +50,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Gallery Lightbox
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.lightbox-close');
-    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const prevBtn = document.querySelector('.lightbox-prev');
-    const nextBtn = document.querySelector('.lightbox-next');
+    if (lightbox) {
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const prevBtn = document.querySelector('.lightbox-prev');
+        const nextBtn = document.querySelector('.lightbox-next');
 
-    let currentIndex = 0;
+        let currentIndex = 0;
 
-    const showImage = (index) => {
-        if (index >= 0 && index < galleryItems.length) {
-            const item = galleryItems[index];
-            const img = item.querySelector('img');
-            const overlay = item.querySelector('.gallery-overlay');
+        const showImage = (index) => {
+            if (index >= 0 && index < galleryItems.length) {
+                const item = galleryItems[index];
+                const img = item.querySelector('img');
+                const overlay = item.querySelector('.gallery-overlay');
 
-            if (img) {
-                const imgSrc = img.getAttribute('src');
-                lightboxImg.setAttribute('src', imgSrc);
+                if (img) {
+                    const imgSrc = img.getAttribute('src');
+                    lightboxImg.setAttribute('src', imgSrc);
 
-                // Capture caption
-                if (overlay && lightboxCaption) {
-                    const title = overlay.querySelector('h5') ? overlay.querySelector('h5').innerText : '';
-                    const desc = overlay.querySelector('p') ? overlay.querySelector('p').innerText : '';
-                    lightboxCaption.innerHTML = `<h5>${title}</h5><p>${desc}</p>`;
-                } else if (lightboxCaption) {
-                    lightboxCaption.innerHTML = '';
+                    // Capture caption
+                    if (overlay && lightboxCaption) {
+                        const title = overlay.querySelector('h5') ? overlay.querySelector('h5').innerText : '';
+                        const desc = overlay.querySelector('p') ? overlay.querySelector('p').innerText : '';
+                        lightboxCaption.innerHTML = `<h5>${title}</h5><p>${desc}</p>`;
+                    } else if (lightboxCaption) {
+                        lightboxCaption.innerHTML = '';
+                    }
+
+                    currentIndex = index;
                 }
-
-                currentIndex = index;
             }
-        }
-    };
+        };
 
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('click', (e) => {
-            showImage(index);
-            lightbox.classList.add('active');
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', (e) => {
+                showImage(index);
+                lightbox.classList.add('active');
+            });
         });
-    });
 
-    closeBtn.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-    });
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.classList.remove('active');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
         }
-    });
 
-    // Keyboard navigation (Escape Only)
-    document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
 
-        if (e.key === 'Escape') {
-            lightbox.classList.remove('active');
-        }
-    });
+        // Keyboard navigation (Escape Only)
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            }
+        });
+    }
 
     // View All Projects Button
     const viewAllBtn = document.getElementById('view-all-btn');
