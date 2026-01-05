@@ -1711,3 +1711,45 @@ footer::before {
     text-transform: uppercase;
 }
 
+
+.story-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
+
+/* Service Description Read More */
+.expandable-service-desc {
+    max-height: 5em; /* Approx 3 lines */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease;
+}
+
+.expandable-service-desc.expanded {
+    max-height: 1000px;
+}
+
+.expandable-service-desc::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(transparent, var(--bg-light));
+    transition: opacity 0.3s ease;
+}
+
+.expandable-service-desc.off-white-bg::after {
+    background: linear-gradient(transparent, var(--bg-off-white));
+}
+
+.expandable-service-desc.expanded::after {
+    opacity: 0;
+    pointer-events: none;
+}
+
