@@ -1455,6 +1455,7 @@ footer::before {
   font-size: 2.2rem;
   margin-bottom: 20px;
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -1820,16 +1821,30 @@ footer::before {
     position: relative;
     z-index: 10;
     /* Adjust padding for mobile */
+    /* border: 5px solid red !important;  Debug border */
   }
 
   .resource-card-wrapper {
     width: 100%;
     margin: 0;
     border-radius: 12px;
+    background: var(--primary-dark);
+    /* Ensure background exists */
+    box-shadow: none;
+    /* Simplify rendering */
+    overflow: visible;
+    /* Let content show if it wants */
+  }
+
+  /* Disable beam animation on mobile to prevent rendering glitches */
+  .resource-card-wrapper::before {
+    display: none !important;
   }
 
   .resource-card {
     padding: 30px 20px;
+    background: transparent;
+    /* Wrapper has background */
   }
 
   .resource-card h2 {
