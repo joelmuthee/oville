@@ -926,46 +926,57 @@ footer::before {
     margin-bottom: 15px;
   }
 
-  /* Accreditations Mobile Scroll */
+  /* Accreditations Mobile: Static Grid */
   .accreditations {
-    padding: 2px 0;
-    overflow: hidden;
-    /* Mask overflow */
-    box-sizing: border-box;
+    padding: 20px 0;
+    overflow: visible;
   }
 
   .accreditations .container {
     width: 100%;
-    overflow: hidden;
-    padding: 0;
+    overflow: visible;
+    padding: 0 15px;
   }
 
   .logo-scroller {
-    display: flex;
-    /* Ensure horizontal */
-    width: max-content;
-    /* Allow content to stretch */
-    animation: scroll-logos 20s linear infinite;
-    /* Marquee */
-    gap: 30px;
-    gap: 30px;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    white-space: nowrap !important;
-    width: max-content !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2x2 Grid */
+    gap: 20px;
+    width: 100%;
+    animation: none !important;
+    /* Stop scrolling */
+    justify-items: center;
     align-items: center;
-    /* Ensure vertical alignment */
   }
 
-  .logo-item {
-    font-size: 0.9rem !important;
-    white-space: nowrap;
-    /* Prevent wrapping */
+  .logo-scroller img {
+    height: 50px;
+    /* Consistent height */
+    width: auto;
+    object-fit: contain;
+    margin: 0;
+    flex-shrink: 0;
   }
 
-  .logo-item i {
-    font-size: 1.2rem !important;
-  }
+  gap: 30px;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  width: max-content !important;
+  align-items: center;
+  /* Ensure vertical alignment */
+}
+
+.logo-item {
+  font-size: 0.9rem !important;
+  white-space: nowrap;
+  /* Prevent wrapping */
+}
+
+.logo-item i {
+  font-size: 1.2rem !important;
+}
 }
 
 @keyframes scroll-logos {
