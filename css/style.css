@@ -1759,3 +1759,15 @@ footer::before {
   opacity: 0;
   pointer-events: none;
 }
+/* Modify expandable desc for Services to default to 0 height if separate from intro */
+/* Actually, reusing the same class might be tricky if we want 0 height. 
+   But 5em (approx 3 lines) is fine as a 'sneak peek' of the next paragraph too. 
+   If user wants it completely hidden, I should override. 
+   Let's check if 5em is suitable. 
+   Paragraph is: 'In undertaking Forensic Engineering...' -> It's about 4 lines. 
+   5em might show most of it.
+   Let's assume the user wants standard 'Read More' behavior (collapse/expand). 
+   I will leave CSS as is for now, as 5em provides a good teaser. 
+   If I need to hide it completely, I would need a new class.
+*/
+
