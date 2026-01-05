@@ -928,67 +928,61 @@ footer::before {
 
   /* Accreditations Mobile: Static Grid */
   .accreditations {
-    padding: 20px 0;
+    padding: 30px 0;
     overflow: visible;
   }
 
   .accreditations .container {
     width: 100%;
     overflow: visible;
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
   .logo-scroller {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     /* 2x2 Grid */
-    gap: 20px;
+    gap: 15px;
+    /* Spacing between items */
     width: 100%;
     animation: none !important;
     /* Stop scrolling */
     justify-items: center;
+    align-items: start;
+    /* Align to top to handle uneven text height */
+  }
+
+  .logo-item {
+    font-size: 0.8rem !important;
+    /* Slightly smaller text for mobile */
+    white-space: normal !important;
+    /* Allow text to wrap */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Stack icon and text */
     align-items: center;
+    gap: 8px;
   }
 
-  .logo-scroller img {
-    height: 50px;
-    /* Consistent height */
-    width: auto;
-    object-fit: contain;
-    margin: 0;
-    flex-shrink: 0;
+  .logo-item i {
+    font-size: 1.5rem !important;
+    /* Larger icon */
+    margin-bottom: 5px;
+    display: block;
   }
-
-  gap: 30px;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  white-space: nowrap !important;
-  width: max-content !important;
-  align-items: center;
-  /* Ensure vertical alignment */
 }
 
-.logo-item {
-  font-size: 0.9rem !important;
-  white-space: nowrap;
-  /* Prevent wrapping */
-}
-
-.logo-item i {
-  font-size: 1.2rem !important;
-}
-}
-
+/* Cleanup animation definition if not used or modify logic */
 @keyframes scroll-logos {
   0% {
     transform: translateX(0);
   }
 
   100% {
-    transform: translateX(-33.33%);
+    transform: translateX(-50%);
   }
-
-  /* Scroll one-third (since we triplicated contents) */
 }
 
 /* Hide the "Who We Are" image on mobile as requested */
