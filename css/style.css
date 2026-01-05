@@ -1770,17 +1770,12 @@ footer::before {
 }
 
 /* Partner Resource Section */
-/* Partner Resource Section - Global Styles */
-.resource-section {
+/* Company Profile Download Section */
+.profile-download-section {
   padding: 60px 0;
   position: relative;
-  z-index: 9999 !important;
-  /* Nuclear z-index */
-  background: red !important;
-  /* DEBUG: Force background visibility */
-  min-height: 400px;
-  /* DEBUG: Force height */
-  display: block !important;
+  z-index: 10;
+  display: block;
 }
 
 .resource-card-wrapper {
@@ -1867,7 +1862,7 @@ footer::before {
 
 /* Mobile Overrides - Must come AFTER global styles */
 @media (max-width: 768px) {
-  .resource-section {
+  .profile-download-section {
     padding: 40px 15px;
     display: block !important;
     opacity: 1 !important;
