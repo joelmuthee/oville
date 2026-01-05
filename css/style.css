@@ -1021,6 +1021,12 @@ footer::before {
   }
 }
 
+/* Global Pulse Animation for Accreditation Icons */
+.logo-item i {
+  animation: pulse-icon 2s infinite ease-in-out;
+  transform-origin: center;
+}
+
 @keyframes pulse-icon {
   0% {
     transform: scale(1);
