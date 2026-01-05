@@ -1767,3 +1767,74 @@ footer::before {
   opacity: 0;
   pointer-events: none;
 }
+/* Partner Resource Section */
+.resource-section {
+    padding: 60px 0;
+    /* Optional: background-color if needed */
+}
+
+.resource-card-wrapper {
+    position: relative;
+    background: #020c1b; /* Darker navy for border base */
+    border-radius: 16px;
+    padding: 2px; /* Border width */
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.resource-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent 0deg, #00d4ff 90deg, transparent 180deg);
+    animation: borderRotate 4s linear infinite;
+    z-index: 0;
+}
+
+@keyframes borderRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.resource-card {
+    position: relative;
+    background: #0a192f; /* Deep Navy */
+    border-radius: 14px;
+    padding: 50px 30px;
+    text-align: center;
+    color: #e6f1ff;
+    z-index: 1;
+}
+
+.resource-card h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.resource-card p {
+    color: #8892b0;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.resource-card .btn {
+    border: 1px solid #64ffda; /* Teal accent */
+    color: #64ffda;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.resource-card .btn:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateY(-3px);
+}
+
