@@ -949,28 +949,28 @@ footer::before {
     /* Stop scrolling */
     justify-items: center;
     align-items: start;
-    /* Align to top to handle uneven text height */
+    margin-bottom: 0;
   }
 
-  .logo-item {
-    font-size: 0.8rem !important;
-    /* Slightly smaller text for mobile */
+  .accreditations .logo-item {
+    font-size: 0.75rem !important;
     white-space: normal !important;
-    /* Allow text to wrap */
-    text-align: center;
+    text-align: center !important;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* Stack icon and text */
-    align-items: center;
+    display: flex !important;
+    flex-direction: column !important;
+    /* Force stack */
+    justify-content: flex-start;
+    align-items: center !important;
     gap: 8px;
+    padding: 5px;
   }
 
-  .logo-item i {
+  .accreditations .logo-item i {
     font-size: 1.5rem !important;
-    /* Larger icon */
-    margin-bottom: 5px;
-    display: block;
+    margin-right: 0 !important;
+    margin-bottom: 5px !important;
+    display: block !important;
   }
 }
 
