@@ -1816,6 +1816,9 @@ footer::before {
     transform: none !important;
     visibility: visible !important;
     padding: 40px 15px;
+    display: block !important;
+    position: relative;
+    z-index: 10;
     /* Adjust padding for mobile */
   }
 
