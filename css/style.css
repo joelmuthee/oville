@@ -1770,18 +1770,18 @@ footer::before {
 }
 
 /* Partner Resource Section */
+/* Partner Resource Section - Global Styles */
 .resource-section {
   padding: 60px 0;
-  /* Optional: background-color if needed */
+  position: relative;
+  z-index: 10;
 }
 
 .resource-card-wrapper {
   position: relative;
   background: #020c1b;
-  /* Darker navy for border base */
   border-radius: 16px;
   padding: 2px;
-  /* Border width */
   overflow: hidden;
   max-width: 900px;
   margin: 0 auto;
@@ -1809,50 +1809,6 @@ footer::before {
     transform: rotate(360deg);
   }
 }
-
-/* Ensure Resource Section is visible on mobile */
-@media (max-width: 768px) {
-  .resource-section {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-    padding: 40px 15px;
-    display: block !important;
-    position: relative;
-    z-index: 10;
-    /* Adjust padding for mobile */
-    /* border: 5px solid red !important;  Debug border */
-  }
-
-  .resource-card-wrapper {
-    width: 100%;
-    margin: 0;
-    border-radius: 12px;
-    background: var(--primary-dark);
-    /* Ensure background exists */
-    box-shadow: none;
-    /* Simplify rendering */
-    overflow: visible;
-    /* Let content show if it wants */
-  }
-
-  /* Disable beam animation on mobile to prevent rendering glitches */
-  .resource-card-wrapper::before {
-    display: none !important;
-  }
-
-  .resource-card {
-    padding: 30px 20px;
-    background: transparent;
-    /* Wrapper has background */
-  }
-
-  .resource-card h2 {
-    font-size: 1.5rem;
-  }
-}
-
-
 
 .resource-card {
   position: relative;
@@ -1889,4 +1845,50 @@ footer::before {
 .resource-card .btn:hover {
   background: rgba(7, 175, 223, 0.1);
   transform: translateY(-3px);
+}
+
+/* Animation Utilities */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Overrides - Must come AFTER global styles */
+@media (max-width: 768px) {
+  .resource-section {
+    padding: 40px 15px;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .resource-card-wrapper {
+    width: 100%;
+    margin: 0;
+    border-radius: 12px;
+    background: var(--primary-dark);
+    /* Fallback */
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  /* Disable beam animation on mobile */
+  .resource-card-wrapper::before {
+    display: none !important;
+  }
+
+  .resource-card {
+    padding: 30px 20px;
+    background: transparent;
+  }
+
+  .resource-card h2 {
+    font-size: 1.5rem;
+  }
 }
