@@ -153,33 +153,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Profile Modal Handling
-        const profileModal = document.getElementById('custom-ghl-modal');
-        const profileBtn = document.querySelector('.btn-ghl-popup');
-        const closeProfileBtn = document.querySelector('.custom-ghl-modal-close');
+    });
 
-        if (profileBtn && profileModal) {
-            profileBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                profileModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
+    // Profile Modal Background Close Handling
+    const profileModal = document.getElementById('custom-ghl-modal');
 
-        if (closeProfileBtn && profileModal) {
-            closeProfileBtn.addEventListener('click', () => {
+    // Close on clicking outside the content
+    if (profileModal) {
+        profileModal.addEventListener('click', (e) => {
+            if (e.target === profileModal) {
                 profileModal.classList.remove('active');
                 document.body.style.overflow = 'auto';
-            });
-
-            profileModal.addEventListener('click', (e) => {
-                if (e.target === profileModal) {
-                    profileModal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        }
-    });
+            }
+        });
+    }
 
     // Simple Slider
     const sliders = document.querySelectorAll('.slider-container');

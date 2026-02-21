@@ -378,7 +378,9 @@ On
                 <div class="hero-bg" style="background-image: url('assets/images/hero/hero_4.webp');"></div>
             </div>
             <div class="slider-slide">
-                <div class="hero-bg" style="background-image: url('assets/images/hero/hero_5.jpg');"></div>
+                <div class="hero-bg"
+                    style="background-image: url('assets/images/hero/hero_5.jpg'); background-position: left center;">
+                </div>
             </div>
         </div>
 
@@ -858,14 +860,16 @@ On
                         capabilities and featured projects delivered straight to your inbox.</p>
 
                     <!-- Custom GoHighLevel Modal Trigger -->
-                    <button class="btn-ghl-popup">
+                    <button class="btn-ghl-popup"
+                        onclick="document.getElementById('custom-ghl-modal').classList.add('active'); document.body.style.overflow='hidden'; return false;">
                         REQUEST PROFILE <i class="fas fa-envelope"></i>
                     </button>
 
                     <!-- Custom Modal Wrapper for GoHighLevel Form -->
                     <div id="custom-ghl-modal" class="custom-ghl-modal">
                         <div class="custom-ghl-modal-content">
-                            <span class="custom-ghl-modal-close">&times;</span>
+                            <span class="custom-ghl-modal-close"
+                                onclick="document.getElementById('custom-ghl-modal').classList.remove('active'); document.body.style.overflow='auto';">&times;</span>
                             <iframe src="https://link.essenceautomations.com/widget/form/RduCzmZtK3vfJlYCmGbD"
                                 style="width:100%;height:100%;border:none;border-radius:10px"
                                 id="inline-RduCzmZtK3vfJlYCmGbD" data-layout="{'id':'INLINE'}"
