@@ -2090,8 +2090,8 @@ footer::before {
   max-width: 500px;
   background: white;
   border-radius: 12px;
-  margin: auto;
-  /* Used instead of flex-center so overflow clips correctly */
+  margin: 0 auto;
+  flex-shrink: 0;
 }
 
 /* Mobile Overrides - Must come AFTER global styles */
