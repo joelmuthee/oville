@@ -120,11 +120,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const hiddenItems = document.querySelectorAll('.hidden-item');
             hiddenItems.forEach(item => {
                 item.classList.remove('hidden-item');
-                // Trigger animation if observer has already run? 
-                // Since they were hidden, observer might not have caught them or they might need manual trigger.
-                // But generally removing display:none should trigger layout and intersection observer if applicable.
             });
             viewAllBtn.style.display = 'none';
+        });
+    }
+
+    // View All Clients Button
+    const viewAllClientsBtn = document.getElementById('view-all-clients-btn');
+    if (viewAllClientsBtn) {
+        viewAllClientsBtn.addEventListener('click', () => {
+            const hiddenClients = document.querySelectorAll('.hidden-client-item');
+            hiddenClients.forEach(item => {
+                item.classList.remove('hidden-client-item');
+            });
+            viewAllClientsBtn.style.display = 'none';
         });
     }
 
@@ -143,4 +152,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
+
+// Simple Slider
+const sliders = document.querySelectorAll('.slider-container');
+sliders.forEach(slider => {
+    const slides = slider.querySelectorAll('.slider-slide');
+    const prevBtn = slider.querySelector('.prev-btn');
+    const nextBtn = slider.querySelector('.next-btn');
+    const dots = slider.querySelectorAll('.dot');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        });
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+    });
+
+    // Auto slide
+    setInterval(() => {
+        let nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
+    }, 5000);
 });
