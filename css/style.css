@@ -2059,6 +2059,53 @@ footer::before {
   transform: translateY(0);
 }
 
+/* Custom GHL Modal */
+.custom-ghl-modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(2, 12, 27, 0.85);
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-ghl-modal.active {
+  display: flex !important;
+  opacity: 1;
+}
+
+.custom-ghl-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  background: transparent;
+  border-radius: 10px;
+  max-height: 90vh;
+}
+
+.custom-ghl-modal-close {
+  position: absolute;
+  top: -45px;
+  right: -10px;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 100000;
+  transition: color 0.3s ease;
+}
+
+.custom-ghl-modal-close:hover {
+  color: var(--accent-color);
+}
+
 /* Mobile Overrides - Must come AFTER global styles */
 @media (max-width: 768px) {
   .profile-download-section {

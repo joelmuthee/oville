@@ -788,25 +788,33 @@ On
             <div class="resource-card-wrapper">
                 <div class="resource-card">
                     <h2>Request Our Company Profile</h2>
-                    <p>Enter your details below to receive a comprehensive overview of our specialized engineering
+                    <p>Click on Request Profile below to receive a comprehensive overview of our specialized engineering
                         capabilities and featured projects delivered straight to your inbox.</p>
 
-                    <!-- GoHighLevel Popup Trigger & Embed -->
-                    <button onclick="document.getElementById('popup-RduCzmZtK3vfJlYCmGbD').style.display='block'"
+                    <!-- Custom GoHighLevel Modal Trigger -->
+                    <button onclick="document.getElementById('custom-ghl-modal').classList.add('active')"
                         class="btn-ghl-popup">
                         REQUEST PROFILE <i class="fas fa-envelope"></i>
                     </button>
 
-                    <iframe src="https://link.essenceautomations.com/widget/form/RduCzmZtK3vfJlYCmGbD"
-                        style="display:none;width:100%;height:100%;border:none;border-radius:3px"
-                        id="popup-RduCzmZtK3vfJlYCmGbD" data-layout="{'id':'POPUP'}" data-trigger-type="none"
-                        data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
-                        data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                        data-form-name="Profile Request" data-height="438"
-                        data-layout-iframe-id="popup-RduCzmZtK3vfJlYCmGbD" data-form-id="RduCzmZtK3vfJlYCmGbD"
-                        title="Profile Request">
-                    </iframe>
-                    <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
+                    <!-- Custom Modal Wrapper for GoHighLevel Form -->
+                    <div id="custom-ghl-modal" class="custom-ghl-modal">
+                        <div class="custom-ghl-modal-content">
+                            <span class="custom-ghl-modal-close"
+                                onclick="document.getElementById('custom-ghl-modal').classList.remove('active')">&times;</span>
+                            <iframe src="https://link.essenceautomations.com/widget/form/RduCzmZtK3vfJlYCmGbD"
+                                style="width:100%;height:100%;border:none;border-radius:10px"
+                                id="inline-RduCzmZtK3vfJlYCmGbD" data-layout="{'id':'INLINE'}"
+                                data-trigger-type="alwaysShow" data-trigger-value=""
+                                data-activation-type="alwaysActivated" data-activation-value=""
+                                data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                                data-form-name="Profile Request" data-height="438"
+                                data-layout-iframe-id="inline-RduCzmZtK3vfJlYCmGbD" data-form-id="RduCzmZtK3vfJlYCmGbD"
+                                title="Profile Request">
+                            </iframe>
+                            <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
