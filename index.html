@@ -139,6 +139,81 @@ On
             margin-right: auto;
         }
 
+        /* Profile Download Section */
+        .profile-download-section {
+            padding: 80px 0;
+            background-color: var(--bg-off-white, #f8f9fa);
+            display: flex;
+            justify-content: center;
+        }
+
+        .resource-card-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 2px 0 0 2px;
+            /* Top and left border effect padding */
+            background: linear-gradient(135deg, #00aaff 0%, transparent 40%);
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-card {
+            background-color: #1a1d3f;
+            /* Dark navy */
+            border-radius: 10px;
+            padding: 50px 40px;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .resource-card h2 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .resource-card p {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 35px auto;
+            line-height: 1.6;
+        }
+
+        .btn-ghl-popup {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+            border: 1px solid #00aaff;
+            border-radius: 30px;
+            background: transparent;
+            color: #00aaff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-ghl-popup i {
+            margin-left: 10px;
+            font-size: 1.1rem;
+        }
+
+        .btn-ghl-popup:hover {
+            background-color: #00aaff;
+            color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+        }
+
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.5rem;
@@ -147,6 +222,14 @@ On
             .hero-stats {
                 flex-direction: column;
                 gap: 20px;
+            }
+
+            .resource-card {
+                padding: 40px 20px;
+            }
+
+            .resource-card h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -362,11 +445,11 @@ On
                         <h5>Big smoke Restaurant Karen</h5>
                     </div>
                 </div>
-                <!-- CBK KISII CURRENCY CENTER -->
+                <!-- CBK Kisii Currency Center -->
                 <div class="gallery-item fade-in-up">
-                    <img src="assets/images/projects/CBK KISII CURRENCY CENTER.webp" alt="CBK KISII CURRENCY CENTER">
+                    <img src="assets/images/projects/CBK Kisii Currency Center.webp" alt="CBK Kisii Currency Center">
                     <div class="gallery-overlay">
-                        <h5>CBK KISII CURRENCY CENTER</h5>
+                        <h5>CBK Kisii Currency Center</h5>
                     </div>
                 </div>
                 <!-- Lions Bluff Lodge Swimming pool -->
@@ -674,8 +757,23 @@ On
                     <h2>Partner with Oville Associates</h2>
                     <p>Download our full company profile to explore our specialized engineering capabilities and project
                         portfolio.</p>
-                    <a href="assets/documents/Oville_Company_Profile.pdf" download target="_blank" class="btn">Download
-                        Profile <i class="fas fa-download" style="margin-left: 10px;"></i></a>
+
+                    <!-- GoHighLevel Popup Trigger & Embed -->
+                    <button onclick="document.getElementById('popup-RduCzmZtK3vfJlYCmGbD').style.display='block'"
+                        class="btn-ghl-popup">
+                        DOWNLOAD PROFILE <i class="fas fa-download"></i>
+                    </button>
+
+                    <iframe src="https://link.essenceautomations.com/widget/form/RduCzmZtK3vfJlYCmGbD"
+                        style="display:none;width:100%;height:100%;border:none;border-radius:3px"
+                        id="popup-RduCzmZtK3vfJlYCmGbD" data-layout="{'id':'POPUP'}" data-trigger-type="alwaysShow"
+                        data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
+                        data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                        data-form-name="Profile Request" data-height="438"
+                        data-layout-iframe-id="popup-RduCzmZtK3vfJlYCmGbD" data-form-id="RduCzmZtK3vfJlYCmGbD"
+                        title="Profile Request">
+                    </iframe>
+                    <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
                 </div>
             </div>
         </div>
