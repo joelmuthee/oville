@@ -2147,18 +2147,7 @@ footer::before {
     margin-top: 30px;
   }
 
-  /* Fix GoHighLevel Popup overflowing and hiding close button */
-  iframe[id^="popup-"],
-  iframe[id^="inline-"] {
-    max-width: 90vw !important;
-    max-height: 85vh !important;
-    margin: auto !important;
-    left: 5vw !important;
-    right: 5vw !important;
-    top: 5vh !important;
-    border-radius: 10px !important;
-    box-sizing: border-box !important;
-  }
+  /* Removed old GHL popup max-width overrides that were breaking flex layouts */
 
   /* Mobile Image Placement for Who We Are */
   #who-we-are .responsive-grid-2 {
@@ -2210,33 +2199,15 @@ footer::before {
 
   .custom-ghl-modal-content {
     width: 100%;
-    height: 550px;
-    /* Fixed height for form */
-    max-height: 85vh;
-    background: #1a1d3f;
-    /* Dark navy matching the card */
+    height: 90vh;
+    max-height: 700px;
+    background: transparent;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     position: relative;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  }
-
-  .custom-ghl-modal-close {
-    position: fixed !important;
-    top: 20px !important;
-    right: 20px !important;
-    background: var(--accent-color) !important;
-    color: white !important;
-    width: 45px !important;
-    height: 45px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-radius: 50% !important;
-    font-size: 2rem !important;
-    z-index: 999999 !important;
-    line-height: 1 !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+    padding: 0;
+    overflow: hidden;
   }
 }
