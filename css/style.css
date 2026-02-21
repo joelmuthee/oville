@@ -2188,9 +2188,11 @@ footer::before {
   .custom-ghl-modal {
     padding: 20px;
     align-items: center;
-    /* Vertically center */
+    justify-content: flex-start;
+    /* Prevent top cropping */
     display: none;
     flex-direction: column;
+    overflow-y: auto;
   }
 
   .custom-ghl-modal.active {
@@ -2199,6 +2201,7 @@ footer::before {
 
   .custom-ghl-modal-content {
     width: 100%;
+    margin: auto 0;
     height: 90vh;
     max-height: 700px;
     background: transparent;
