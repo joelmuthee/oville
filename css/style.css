@@ -2083,7 +2083,7 @@ footer::before {
   position: relative;
   width: 100%;
   max-width: 500px;
-  background: white;
+  background: transparent;
   border-radius: 12px;
   margin: 0 auto;
   flex-shrink: 0;

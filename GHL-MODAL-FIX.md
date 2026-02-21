@@ -89,7 +89,7 @@ Use standard block flow. Construct the modal layout so the browser draws it top-
   position: relative;
   width: 100%;
   max-width: 500px;
-  background: white;
+  background: transparent;
   border-radius: 12px;
   margin: 0 auto; /* Horizontally centers, but allows vertical block flow */
   flex-shrink: 0;
