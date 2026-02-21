@@ -868,12 +868,9 @@ On
                     <!-- Custom Modal Wrapper for GoHighLevel Form -->
                     <div id="custom-ghl-modal" class="custom-ghl-modal" style="flex-direction: column;">
                         <!-- SAFE CLOSE BUTTON (Separated from iframe container) -->
-                        <div
-                            style="width: 90%; max-width: 500px; display: flex; justify-content: flex-end; margin-bottom: 10px; z-index: 9999999;">
-                            <button
-                                onclick="document.getElementById('custom-ghl-modal').classList.remove('active'); document.body.style.overflow='auto'; return false;"
-                                style="background: var(--accent-color, #07afdf); color: white; border: none; width: 45px; height: 45px; font-size: 2rem; font-weight: normal; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">&times;</button>
-                        </div>
+                        <button
+                            onclick="document.getElementById('custom-ghl-modal').classList.remove('active'); document.body.style.overflow='auto'; return false;"
+                            style="position: fixed !important; top: 15px !important; right: 15px !important; background: var(--accent-color, #07afdf) !important; color: white !important; border: none !important; width: 45px !important; height: 45px !important; font-size: 2rem !important; font-weight: normal !important; border-radius: 50% !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; z-index: 2147483647 !important;">&times;</button>
                         <div class="custom-ghl-modal-content" style="padding-top: 15px;">
                             <iframe src="https://link.essenceautomations.com/widget/form/RduCzmZtK3vfJlYCmGbD"
                                 style="width:100%;height:100%;border:none;border-radius:10px"
