@@ -36,15 +36,38 @@ On
     <style>
         /* Home Specific Styles */
         .hero {
-            background: linear-gradient(rgba(38, 42, 105, 0.9), rgba(15, 17, 46, 0.9)), url('assets/images/hero.jpg');
-            background-size: cover;
-            background-position: center;
             height: 90vh;
             display: flex;
             align-items: center;
             color: white;
             position: relative;
             overflow: hidden;
+            background: #0f112e;
+            /* Fallback */
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 8s ease-out;
+        }
+
+        /* Combined overlay for the whole hero */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(38, 42, 105, 0.7), rgba(15, 17, 46, 0.8));
+            z-index: 2;
         }
 
         .hero::after {
@@ -55,6 +78,16 @@ On
             width: 100%;
             height: 100px;
             background: linear-gradient(to top, var(--bg-light), transparent);
+            z-index: 3;
+        }
+
+        .slider-slide.active .hero-bg {
+            transform: scale(1.1);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
         }
 
         .hero-content h1 {
@@ -310,7 +343,25 @@ On
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero slider-container">
+        <div class="slider-wrapper">
+            <div class="slider-slide active">
+                <div class="hero-bg" style="background-image: url('assets/images/hero/hero_1.jpg');"></div>
+            </div>
+            <div class="slider-slide">
+                <div class="hero-bg" style="background-image: url('assets/images/hero/hero_2.jpg');"></div>
+            </div>
+            <div class="slider-slide">
+                <div class="hero-bg" style="background-image: url('assets/images/hero/hero_3.jpg');"></div>
+            </div>
+            <div class="slider-slide">
+                <div class="hero-bg" style="background-image: url('assets/images/hero/hero_4.webp');"></div>
+            </div>
+            <div class="slider-slide">
+                <div class="hero-bg" style="background-image: url('assets/images/hero/hero_5.jpg');"></div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="hero-content fade-in-up">
                 <h4>World-Class Engineering</h4>
@@ -337,6 +388,15 @@ On
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="slider-dots hero-dots"
+            style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 10;">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
         </div>
     </header>
 
@@ -778,16 +838,14 @@ On
                         capabilities and featured projects delivered straight to your inbox.</p>
 
                     <!-- Custom GoHighLevel Modal Trigger -->
-                    <button onclick="document.getElementById('custom-ghl-modal').classList.add('active')"
-                        class="btn-ghl-popup">
+                    <button class="btn-ghl-popup">
                         REQUEST PROFILE <i class="fas fa-envelope"></i>
                     </button>
 
                     <!-- Custom Modal Wrapper for GoHighLevel Form -->
                     <div id="custom-ghl-modal" class="custom-ghl-modal">
                         <div class="custom-ghl-modal-content">
-                            <span class="custom-ghl-modal-close"
-                                onclick="document.getElementById('custom-ghl-modal').classList.remove('active')">&times;</span>
+                            <span class="custom-ghl-modal-close">&times;</span>
                             <iframe src="https://link.essenceautomations.com/widget/form/RduCzmZtK3vfJlYCmGbD"
                                 style="width:100%;height:100%;border:none;border-radius:10px"
                                 id="inline-RduCzmZtK3vfJlYCmGbD" data-layout="{'id':'INLINE'}"
