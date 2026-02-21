@@ -1,0 +1,15 @@
+deploy.zip
+oville_deployment.zip
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.avif
+!assets/images/**/*
+!additional logos/**/*
+!additional photos/**/*
+node_modules/
+.vscode/
+mcp_config.json
+GHL-MODAL-FIX.md

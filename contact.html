@@ -215,16 +215,20 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
-    <!-- Partner Resource Section -->
+    <!-- Request Our Company Profile Section -->
     <section class="profile-download-section">
         <div class="container">
             <div class="resource-card-wrapper">
                 <div class="resource-card">
-                    <h2>Partner with Oville Associates</h2>
-                    <p>Download our full company profile to explore our specialized engineering capabilities and project
-                        portfolio.</p>
-                    <a href="assets/documents/Oville_Company_Profile.pdf" download target="_blank" class="btn">Download
-                        Profile <i class="fas fa-download" style="margin-left: 10px;"></i></a>
+                    <h2>Request Our Company Profile</h2>
+                    <p>Click on Request Profile below to receive a comprehensive overview of our specialized engineering
+                        capabilities and featured projects delivered straight to your inbox.</p>
+
+                    <!-- Custom GoHighLevel Modal Trigger -->
+                    <button class="btn-ghl-popup"
+                        onclick="document.getElementById('custom-ghl-modal').classList.add('active'); document.body.style.overflow='hidden'; return false;">
+                        REQUEST PROFILE <i class="fas fa-envelope"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -271,6 +275,33 @@
             </div>
         </div>
     </footer>
+
+    <!-- Custom Modal Wrapper for GoHighLevel Form -->
+    <div id="custom-ghl-modal" class="custom-ghl-modal">
+        <!-- CONTAINER WRAPPER FOR SCROLLING -->
+        <div
+            style="width: 100%; max-width: 500px; margin: 0 auto; padding: 40px 15px; box-sizing: border-box; display: block;">
+            <!-- NATIVELY FLOWED CLOSE BUTTON -->
+            <div style="width: 100%; margin-bottom: 15px; text-align: right;">
+                <button
+                    onclick="document.getElementById('custom-ghl-modal').classList.remove('active'); document.body.style.overflow='auto'; return false;"
+                    style="background: var(--accent-color, #07afdf); color: white; border: 2px solid white; padding: 10px 20px; border-radius: 30px; font-weight: bold; font-size: 1.1rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.5); display: inline-flex; align-items: center; justify-content: center; text-transform: uppercase; letter-spacing: 1px;">
+                    CLOSE &times;
+                </button>
+            </div>
+            <div class="custom-ghl-modal-content">
+                <iframe src="https://link.essenceautomations.com/widget/form/RduCzmZtK3vfJlYCmGbD"
+                    style="width:100%;height:100%;border:none;border-radius:12px;min-height:500px;"
+                    id="inline-RduCzmZtK3vfJlYCmGbD" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow"
+                    data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
+                    data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Profile Request"
+                    data-height="500" data-layout-iframe-id="inline-RduCzmZtK3vfJlYCmGbD"
+                    data-form-id="RduCzmZtK3vfJlYCmGbD" title="Profile Request">
+                </iframe>
+                <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
     <script src="https://widgets.leadconnectorhq.com/loader.js"
