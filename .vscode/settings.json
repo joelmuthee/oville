@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+        "ghl-mcp": {
+            "command": "C:\\Users\\Joel\\ghl-mcp-oville.bat",
+            "args": []
+        }
+    }
+}

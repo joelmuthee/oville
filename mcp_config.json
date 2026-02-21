@@ -6,15 +6,8 @@
             "enabled": true
         },
         "ghl-mcp": {
-            "command": "node",
-            "args": [
-                "c:\\Users\\Joel\\OneDrive\\Documents\\Anti Gravity\\Essence Automations\\gohighlevel-mcp\\dist\\server.js"
-            ],
-            "env": {
-                "GHL_API_KEY": "pit-576c62af-b09b-4d69-a6a8-cfec31b81826",
-                "GHL_BASE_URL": "https://services.leadconnectorhq.com",
-                "GHL_LOCATION_ID": "5k6KNgyaQ3FEfyMVixnv"
-            },
+            "command": "C:\\Users\\Joel\\ghl-mcp-oville.bat",
+            "args": [],
             "enabled": true
         }
     }

@@ -2160,4 +2160,39 @@ footer::before {
     border-radius: 10px !important;
     box-sizing: border-box !important;
   }
+
+  /* Mobile Image Placement for Who We Are */
+  #who-we-are .responsive-grid-2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .who-we-are-text {
+    display: contents;
+  }
+
+  .who-we-are-text h4 {
+    order: 1;
+  }
+
+  .who-we-are-text h2 {
+    order: 2;
+    margin-bottom: 5px;
+  }
+
+  #who-we-are .responsive-grid-2 .who-we-are-image {
+    order: 3;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .who-we-are-text p {
+    order: 4;
+  }
+
+  .who-we-are-text .btn {
+    order: 5;
+    margin-top: 15px !important;
+    align-self: flex-start;
+  }
 }
