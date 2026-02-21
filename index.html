@@ -86,30 +86,43 @@ On
         /* Accreditations */
         .accreditations {
             background: var(--bg-off-white);
-            padding: 40px 0;
+            padding: 60px 0;
             overflow: hidden;
         }
 
         .logo-scroller {
-            display: flex;
-            gap: 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
             justify-content: center;
-            align-items: center;
-            opacity: 0.7;
-            flex-wrap: wrap;
+            align-items: start;
         }
 
         .logo-item {
-            font-weight: 700;
-            color: #888;
-            font-size: 1.2rem;
+            color: #666;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
+            text-align: center;
+            gap: 12px;
         }
 
         .logo-item i {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+
+        .logo-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+
+        .logo-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            line-height: 1.4;
         }
 
         /* Map Section */
@@ -224,6 +237,20 @@ On
                 gap: 20px;
             }
 
+            .logo-scroller {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px 15px;
+                /* Significantly reduced horizontal gap on mobile */
+            }
+
+            .logo-item h4 {
+                font-size: 0.95rem;
+            }
+
+            .logo-item p {
+                font-size: 0.8rem;
+            }
+
             .resource-card {
                 padding: 40px 20px;
             }
@@ -317,22 +344,28 @@ On
     <section class="accreditations">
         <div class="container">
             <div class="logo-scroller">
-                <!-- 1. EBK -->
-                <div class="logo-item fade-in-up" title="Engineers Board of Kenya"><i
-                        class="fas fa-certificate text-accent"></i>
-                    Licensed by Engineers Board of Kenya &ndash; Ensuring Legality</div>
-                <!-- 2. KGBS -->
-                <div class="logo-item fade-in-up" title="Kenya Green Building Society"><i
-                        class="fas fa-leaf text-accent"></i>
-                    Member of Kenya Green Building Society &ndash; Sustainability is at the core of our practice</div>
-                <!-- 3. ACEK (Replacing IEK) -->
-                <div class="logo-item fade-in-up" title="Association of Consulting Engineers of Kenya"><i
-                        class="fas fa-award text-accent"></i>
-                    Member Association of Consulting Engineers of Kenya &ndash; Collaborations</div>
-                <!-- 4. Data Protection -->
-                <div class="logo-item fade-in-up" title="Office of the Data Protection Commissioner"><i
-                        class="fas fa-user-shield text-accent"></i>
-                    Registered with Office of Data Protection Commissioner &ndash; Safeguarding Personal Data</div>
+                <div class="logo-item fade-in-up" title="Engineers Board of Kenya">
+                    <i class="fas fa-certificate"></i>
+                    <h4>EBK Licensed</h4>
+                    <p>Ensuring strict legal compliance and structural safety.</p>
+                </div>
+                <div class="logo-item fade-in-up" title="Kenya Green Building Society" style="transition-delay: 0.1s;">
+                    <i class="fas fa-leaf"></i>
+                    <h4>KGBS Member</h4>
+                    <p>Championing sustainable engineering practices.</p>
+                </div>
+                <div class="logo-item fade-in-up" title="Association of Consulting Engineers of Kenya"
+                    style="transition-delay: 0.2s;">
+                    <i class="fas fa-award"></i>
+                    <h4>ACEK Registered</h4>
+                    <p>Fostering industry excellence through collaboration.</p>
+                </div>
+                <div class="logo-item fade-in-up" title="Office of the Data Protection Commissioner"
+                    style="transition-delay: 0.3s;">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>ODPC Registered</h4>
+                    <p>Committed to securing sensitive project data.</p>
+                </div>
             </div>
         </div>
     </section>
