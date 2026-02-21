@@ -850,19 +850,17 @@ footer::before {
 
   /* Hero Section Mobile Fixes */
   .hero {
-    height: auto;
+    height: 100vh !important;
     min-height: 100vh;
-    /* Full screen height to ensure space */
-    padding-top: 200px;
-    /* MORE padding to clear navbar - significantly increased */
-    padding-bottom: 80px;
-    background-position: center;
-    /* Center image */
-    background-size: cover;
+    padding-top: 100px;
+    /* Reduced to stop pushing content down */
+    padding-bottom: 40px;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    /* Ensure all hero content is centered */
+    position: relative;
+    overflow: hidden;
   }
 
   .hero-content {
@@ -2139,8 +2137,8 @@ footer::before {
     font-size: 1.5rem;
   }
 
-  /* Force slider visibility and scale down for mobile */
-  .slider-container {
+  /* Force slider visibility and scale down for mobile (except hero) */
+  .slider-container:not(.hero) {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
