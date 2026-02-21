@@ -221,6 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(() => {
             let nextIndex = (currentSlide + 1) % slides.length;
             showSlide(nextIndex);
-        }, 5000);
+        }, 6000);
     });
 });
