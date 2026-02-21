@@ -2068,13 +2068,15 @@ footer::before {
   height: 100%;
   background-color: rgba(2, 12, 27, 0.85);
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Flow from top to bottom */
+  flex-direction: column;
+  /* Stack vertically! */
   backdrop-filter: blur(5px);
   opacity: 0;
   transition: opacity 0.3s ease;
   overflow-y: auto;
-  padding: 60px 15px 20px 15px;
-  /* Clear space for absolute close btn */
+  padding: 40px 15px;
 }
 
 .custom-ghl-modal.active {
