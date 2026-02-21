@@ -2091,4 +2091,26 @@ footer::before {
   .resource-card h2 {
     font-size: 1.5rem;
   }
+
+  /* Force slider visibility and scale down for mobile */
+  .slider-container {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: 350px !important;
+    max-width: 100% !important;
+    margin-top: 30px;
+  }
+
+  /* Fix GoHighLevel Popup overflowing and hiding close button */
+  iframe[id^="popup-"] {
+    max-width: 90vw !important;
+    max-height: 85vh !important;
+    margin: auto !important;
+    left: 5vw !important;
+    right: 5vw !important;
+    top: 5vh !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+  }
 }
