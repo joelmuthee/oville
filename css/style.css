@@ -2072,6 +2072,9 @@ footer::before {
   backdrop-filter: blur(5px);
   opacity: 0;
   transition: opacity 0.3s ease;
+  overflow-y: auto;
+  padding: 60px 15px 20px 15px;
+  /* Clear space for absolute close btn */
 }
 
 .custom-ghl-modal.active {
@@ -2081,27 +2084,12 @@ footer::before {
 
 .custom-ghl-modal-content {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 500px;
-  background: transparent;
-  border-radius: 10px;
-  max-height: 90vh;
-}
-
-.custom-ghl-modal-close {
-  position: absolute;
-  top: -45px;
-  right: -10px;
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 300;
-  cursor: pointer;
-  z-index: 100000;
-  transition: color 0.3s ease;
-}
-
-.custom-ghl-modal-close:hover {
-  color: var(--accent-color);
+  background: white;
+  border-radius: 12px;
+  margin: auto;
+  /* Used instead of flex-center so overflow clips correctly */
 }
 
 /* Mobile Overrides - Must come AFTER global styles */
@@ -2184,33 +2172,4 @@ footer::before {
     align-self: flex-start;
   }
 
-  /* Fix Custom GHL Modal for Mobile */
-  .custom-ghl-modal {
-    padding: 20px;
-    align-items: center;
-    justify-content: flex-start;
-    /* Prevent top cropping */
-    display: none;
-    flex-direction: column;
-    overflow-y: auto;
-  }
-
-  .custom-ghl-modal.active {
-    display: flex !important;
-  }
-
-  .custom-ghl-modal-content {
-    width: 100%;
-    margin: auto 0;
-    height: 90vh;
-    max-height: 700px;
-    background: transparent;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    padding: 0;
-    overflow: hidden;
-  }
 }

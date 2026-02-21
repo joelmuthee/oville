@@ -867,35 +867,26 @@ On
 
                     <!-- Custom Modal Wrapper for GoHighLevel Form -->
                     <div id="custom-ghl-modal" class="custom-ghl-modal">
-                        <div class="custom-ghl-modal-content"
-                            style="background: #1a1d3f; display: flex; flex-direction: column; overflow: hidden; height: 90vh; max-height: 700px; border-radius: 12px; padding: 0; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
 
-                            <!-- EXPLICIT STATIC HEADER BLOCK -->
-                            <div
-                                style="flex-shrink: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #1a1d3f; border-bottom: 1px solid rgba(255,255,255,0.1); box-sizing: border-box; z-index: 10;">
-                                <span
-                                    style="color: white; font-weight: bold; font-size: 1.2rem; margin: 0; letter-spacing: 1px;">Request
-                                    Profile</span>
-                                <button
-                                    onclick="document.getElementById('custom-ghl-modal').classList.remove('active'); document.body.style.overflow='auto'; return false;"
-                                    style="background: transparent; color: var(--accent-color, #07afdf); border: none; font-size: 2.5rem; font-weight: normal; display: flex; align-items: center; justify-content: center; z-index: 2147483647; cursor: pointer; line-height: 1; padding: 0; margin: 0;">&times;</button>
-                            </div>
+                        <!-- UNKILLABLE SCREEN-LEVEL CLOSE BUTTON -->
+                        <button
+                            onclick="document.getElementById('custom-ghl-modal').classList.remove('active'); document.body.style.overflow='auto'; return false;"
+                            style="position: absolute !important; top: 15px !important; right: 15px !important; z-index: 2147483647 !important; background: var(--accent-color, #07afdf) !important; color: white !important; border: 2px solid white !important; padding: 10px 20px !important; border-radius: 30px !important; font-weight: bold !important; font-size: 1.1rem !important; cursor: pointer !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; display: flex !important; align-items: center !important; justify-content: center !important; text-transform: uppercase !important; letter-spacing: 1px !important;">
+                            CLOSE &times;
+                        </button>
 
-                            <!-- SCROLLABLE IFRAME CONTAINER -->
-                            <div
-                                style="flex: 1; width: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 20px 0 0 0; background: #1a1d3f; box-sizing: border-box;">
-                                <iframe src="https://link.essenceautomations.com/widget/form/RduCzmZtK3vfJlYCmGbD"
-                                    style="width:100%;height:100%;border:none;min-height:500px;"
-                                    id="inline-RduCzmZtK3vfJlYCmGbD" data-layout="{'id':'INLINE'}"
-                                    data-trigger-type="alwaysShow" data-trigger-value=""
-                                    data-activation-type="alwaysActivated" data-activation-value=""
-                                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                                    data-form-name="Profile Request" data-height="500"
-                                    data-layout-iframe-id="inline-RduCzmZtK3vfJlYCmGbD"
-                                    data-form-id="RduCzmZtK3vfJlYCmGbD" title="Profile Request">
-                                </iframe>
-                                <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
-                            </div>
+                        <div class="custom-ghl-modal-content">
+                            <iframe src="https://link.essenceautomations.com/widget/form/RduCzmZtK3vfJlYCmGbD"
+                                style="width:100%;height:100%;border:none;border-radius:12px;min-height:500px;"
+                                id="inline-RduCzmZtK3vfJlYCmGbD" data-layout="{'id':'INLINE'}"
+                                data-trigger-type="alwaysShow" data-trigger-value=""
+                                data-activation-type="alwaysActivated" data-activation-value=""
+                                data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                                data-form-name="Profile Request" data-height="500"
+                                data-layout-iframe-id="inline-RduCzmZtK3vfJlYCmGbD" data-form-id="RduCzmZtK3vfJlYCmGbD"
+                                title="Profile Request">
+                            </iframe>
+                            <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
                         </div>
                     </div>
                 </div>
