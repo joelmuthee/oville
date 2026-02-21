@@ -2148,7 +2148,8 @@ footer::before {
   }
 
   /* Fix GoHighLevel Popup overflowing and hiding close button */
-  iframe[id^="popup-"] {
+  iframe[id^="popup-"],
+  iframe[id^="inline-"] {
     max-width: 90vw !important;
     max-height: 85vh !important;
     margin: auto !important;
