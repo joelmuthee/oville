@@ -256,6 +256,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
+    // Mobile Scroll Focus (Bidirectional)
+    const cardsToFocus = document.querySelectorAll('.service-card, .philosophy-item, .team-member-card, .compliance-card, .client-item');
+
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 768) {
+            let closestCard = null;
+            let minDistance = Infinity;
+
+            cardsToFocus.forEach(card => {
+                const box = card.getBoundingClientRect();
+                const viewportCenter = window.innerHeight / 2;
+                const cardCenter = box.top + box.height / 2;
+                const distance = Math.abs(cardCenter - viewportCenter);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestCard = card;
+                }
+            });
+
+            cardsToFocus.forEach(card => {
+                if (card === closestCard && minDistance < window.innerHeight * 0.3) {
+                    card.classList.add('focused');
+                } else {
+                    card.classList.remove('focused');
+                }
+            });
+        }
+    });
+
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });

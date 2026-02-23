@@ -209,6 +209,11 @@ ul {
   mix-blend-mode: normal;
 }
 
+.navbar.scrolled .logo img {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(50%) saturate(3000%) hue-rotate(220deg);
+  /* This turns white parts into the brand blue #262a69 area visibility */
+}
+
 .navbar .logo img:hover {
   transform: scale(1.08);
 }
@@ -642,6 +647,22 @@ footer::before {
 .feature-item,
 .compliance-card {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Mobile Scroll Focus Style */
+@media (max-width: 768px) {
+
+  .service-card.focused,
+  .philosophy-item.focused,
+  .team-member-card.focused,
+  .client-item.focused,
+  .feature-item.focused,
+  .compliance-card.focused {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color);
+    z-index: 5;
+  }
 }
 
 .compliance-card h3 {
