@@ -146,8 +146,9 @@ ul {
 /* Animations */
 .fade-in-up {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
 }
 
 .fade-in-up.visible {
@@ -1030,9 +1031,9 @@ footer::before {
   .hero {
     height: 100vh !important;
     min-height: 100vh;
-    padding-top: 100px;
-    /* Reduced to stop pushing content down */
-    padding-bottom: 40px;
+    padding-top: 20px;
+    /* Dramatically reduced top padding to allow more movement */
+    padding-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1042,9 +1043,9 @@ footer::before {
   }
 
   .hero-content {
-    padding-top: 20px;
+    margin-top: -60px;
+    /* Pushes content higher than true vertical center */
     width: 100%;
-    /* Ensure full width for centering */
   }
 
   .hero-content h4 {
@@ -2279,17 +2280,7 @@ footer::before {
   box-shadow: 0 5px 15px rgba(7, 175, 223, 0.4);
 }
 
-/* Animation Utilities */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Duplicated animation block removed */
 
 /* Custom GHL Modal */
 .custom-ghl-modal {

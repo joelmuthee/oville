@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // Scroll Animations (Intersection Observer)
+    // Scroll Animations (Intersection Observer - Bidirectional)
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.05,
+        rootMargin: "0px 0px -5% 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -59,13 +59,29 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             } else {
-                entry.target.classList.remove('visible');
+                // Bidirectional: Remove class when element is out of view
+                // Only remove if it's below the viewport to avoid flickering at the top
+                const rect = entry.target.getBoundingClientRect();
+                if (rect.top > window.innerHeight || rect.bottom < 0) {
+                    entry.target.classList.remove('visible');
+                }
             }
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.fade-in-up, .accreditations .logo-item');
-    animatedElements.forEach(el => observer.observe(el));
+    // Observe all animateable elements
+    const observeAll = () => {
+        const animatedElements = document.querySelectorAll('.fade-in-up, .accreditations .logo-item, .service-card, .philosophy-item, .team-member-card, .client-item, .compliance-card');
+        animatedElements.forEach(el => {
+            observer.observe(el);
+            // Check immediately if it's already in view
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add('visible');
+            }
+        });
+    };
+    observeAll();
 
     // Gallery Lightbox
     const lightbox = document.getElementById('lightbox');
@@ -277,7 +293,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             cardsToFocus.forEach(card => {
-                if (card === closestCard && minDistance < window.innerHeight * 0.3) {
+                // Only focus cards that are already visible in the viewport flow
+                const isVisible = card.classList.contains('visible') || window.getComputedStyle(card).opacity > 0;
+                if (card === closestCard && minDistance < window.innerHeight * 0.3 && isVisible) {
                     card.classList.add('focused');
                 } else {
                     card.classList.remove('focused');
