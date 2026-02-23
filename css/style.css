@@ -27,17 +27,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-light);
+  background: linear-gradient(to bottom, rgba(38, 42, 105, 0.02), rgba(7, 175, 223, 0.05));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+  background: linear-gradient(to bottom, var(--primary-color) 0%, var(--accent-color) 100%);
   border-radius: 10px;
-  border: 2px solid var(--bg-light);
+  border: 2px solid #ffffff;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, var(--primary-dark), var(--accent-hover));
+  background: linear-gradient(to bottom, var(--accent-color) 0%, var(--primary-color) 100%);
 }
 
 /* Firefox */
