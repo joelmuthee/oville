@@ -382,10 +382,10 @@ footer {
   overflow: hidden;
 }
 
-/* Footer Logo Extraction Magic */
+/* Footer Logo */
 footer .logo img {
-  filter: grayscale(1) contrast(5);
-  mix-blend-mode: screen;
+  filter: none;
+  mix-blend-mode: normal;
 }
 
 /* Centered Entry Accent Bar */
