@@ -1043,7 +1043,7 @@ footer::before {
   }
 
   .hero-content {
-    margin-top: -60px;
+    margin-top: -100px;
     /* Pushes content higher than true vertical center */
     width: 100%;
   }
