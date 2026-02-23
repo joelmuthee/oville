@@ -213,29 +213,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Counter Animation
     const counters = document.querySelectorAll('.counter');
-    const speed = 100; // Lower is faster
+    const duration = 2000; // Total duration in ms
 
     const counterObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const counter = entry.target;
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
-                    const inc = target / speed;
+                const target = +counter.getAttribute('data-target');
+                let startTimestamp = null;
 
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + inc);
-                        setTimeout(updateCount, 20);
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    counter.innerText = Math.floor(progress * target);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
                     } else {
                         counter.innerText = target;
                     }
                 };
-                updateCount();
-                observer.unobserve(counter); // Only run once
+                window.requestAnimationFrame(step);
+                observer.unobserve(counter);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
 
     counters.forEach(counter => {
         counterObserver.observe(counter);
