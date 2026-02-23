@@ -21,6 +21,31 @@
   --max-width: 1280px;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+  border-radius: 10px;
+  border: 2px solid var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--primary-dark), var(--accent-hover));
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) var(--bg-light);
+}
+
 *,
 *::before,
 *::after {
@@ -211,8 +236,8 @@ ul {
 }
 
 .navbar.scrolled .logo img {
-  filter: brightness(0) saturate(100%) invert(14%) sepia(50%) saturate(3000%) hue-rotate(220deg);
-  /* Ensures white parts of the logo are visible as brand blue #262a69 on the light background */
+  filter: brightness(0) saturate(100%) invert(55%) sepia(79%) saturate(2132%) hue-rotate(155deg) brightness(95%) contrast(94%);
+  /* Ensures white parts of the logo are visible as brand accent blue #07afdf on the light background */
 }
 
 .navbar .logo img:hover {
@@ -392,6 +417,11 @@ footer {
 footer .logo img {
   filter: none;
   mix-blend-mode: normal;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+footer .logo img:hover {
+  transform: scale(1.08);
 }
 
 /* Centered Entry Accent Bar */
