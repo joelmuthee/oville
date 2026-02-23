@@ -4,10 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.nav-menu');
     const dropdowns = document.querySelectorAll('.dropdown');
 
+    // Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    const handleScroll = () => {
+        if (window.scrollY > 20) {
+            navbar.classList.add('scrolled');
+        } else if (!navMenu.classList.contains('active')) {
+            navbar.classList.remove('scrolled');
+        }
+    };
+    window.addEventListener('scroll', handleScroll);
+
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             navToggle.innerHTML = navMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+
+            // Force solid navbar background when menu is open on mobile
+            if (navMenu.classList.contains('active')) {
+                navbar.classList.add('scrolled');
+            } else if (window.scrollY <= 20) {
+                navbar.classList.remove('scrolled');
+            }
         });
     }
 
