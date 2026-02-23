@@ -23,30 +23,27 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(38, 42, 105, 0.05);
-  /* Subtle primary color for track */
+  background: var(--bg-light);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
   border-radius: 10px;
-  border: 2px solid #f8f9fa;
-  /* Slight spacing for "floating" effect */
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--bg-light);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+  background: linear-gradient(to bottom, var(--primary-dark), var(--accent-hover));
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--accent-color) var(--primary-color);
+  scrollbar-color: var(--accent-color) var(--bg-light);
 }
 
 *,
