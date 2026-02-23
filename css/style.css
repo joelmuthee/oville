@@ -16,7 +16,7 @@
   --bg-off-white: #f8f9fa;
   --bg-dark: #0f112e;
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --header-height: 110px;
+  --header-height: 85px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --max-width: 1280px;
 }
@@ -189,15 +189,19 @@ ul {
 }
 
 .navbar .logo img {
-  height: 105px;
-  /* Increased size */
+  height: 65px;
+  /* Reduced from 105px for better spacing */
   width: auto;
   transition: var(--transition);
 }
 
 @media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
+
   .navbar .logo img {
-    height: 60px;
+    height: 50px;
   }
 }
 
@@ -333,7 +337,7 @@ footer::after {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
+  width: 25%;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
   opacity: 0.3;
@@ -393,7 +397,7 @@ footer::before {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
+  width: 25%;
   height: 2px;
   background: var(--accent-color);
   border-radius: 2px;
@@ -1183,6 +1187,13 @@ footer::before {
     margin: 0 auto 20px auto;
     /* Force centering if block */
   }
+
+  footer::after,
+  .footer-bottom::before {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 25% !important;
+  }
 }
 
 .gallery-item:hover img {
@@ -1493,8 +1504,8 @@ footer::before {
   }
 
   .hero {
-    padding-top: 100px !important;
-    /* REDUCED per user feedback (was 150px) */
+    padding-top: calc(var(--header-height) + 40px) !important;
+    /* Adjusted to clear fixed header and reduce excessive space */
     align-items: flex-start !important;
   }
 
