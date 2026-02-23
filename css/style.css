@@ -1310,30 +1310,54 @@ footer::before {
 }
 
 
-/* CTA Section - Consolidated to dark premium style */
+/* CTA Section - Refined Midnight Style */
 .contact-cta {
-  padding: 100px 0;
-  background: var(--primary-dark);
+  padding: 120px 0;
+  background-color: #020c1b;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(7, 175, 223, 0.15) 0, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(38, 42, 105, 0.4) 0, transparent 50%);
   position: relative;
   overflow: hidden;
   text-align: center;
   color: white !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .contact-cta h2 {
   color: white !important;
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 25px;
   font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .contact-cta p {
-  color: rgba(255, 255, 255, 0.8) !important;
-  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin-bottom: 45px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.contact-cta .btn-light {
+  background: white !important;
+  color: #020c1b !important;
+  padding: 18px 45px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(7, 175, 223, 0.3);
+  transition: all 0.4s ease;
+}
+
+.contact-cta .btn-light:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(7, 175, 223, 0.5);
+  background: var(--accent-color) !important;
+  color: white !important;
 }
 
 /* Desktop Specifics: Hide Duplicates & Align Buttons & Header */
