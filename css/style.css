@@ -779,11 +779,11 @@ footer::before {
 
 @media (max-width: 768px) {
   .hero-badge {
-    font-size: 0.65rem;
-    padding: 5px 12px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    font-weight: 700;
+    font-size: 0.55rem !important;
+    padding: 4px 10px !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
   }
 }
 
