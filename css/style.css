@@ -319,8 +319,8 @@ ul {
 
 /* Footer - Upgraded to Midnight Style */
 footer {
-  background-color: #010811;
-  color: var(--text-light);
+  background-color: #010811 !important;
+  color: var(--text-light) !important;
   padding: 80px 0 30px;
   position: relative;
   overflow: hidden;
