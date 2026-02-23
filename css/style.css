@@ -485,8 +485,9 @@ footer::before {
   border-bottom: 3px solid transparent;
 }
 
-.service-card:hover {
-  /* Animation handled by global card hover rule */
+/* Service card base transition */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .service-icon {
@@ -626,9 +627,21 @@ footer::before {
 .client-item:hover,
 .feature-item:hover,
 .compliance-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  transform: translateY(-15px) scale(1.06);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   border-color: var(--accent-color);
+  z-index: 10;
+  /* Ensure popped card is on top */
+}
+
+/* Make it feel more responsive */
+.service-card,
+.philosophy-item,
+.team-member-card,
+.client-item,
+.feature-item,
+.compliance-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .compliance-card h3 {
@@ -1673,8 +1686,9 @@ footer::before {
   height: 100%;
 }
 
-.feature-item:hover {
-  /* Animation handled by global card hover rule */
+/* Feature item base transition */
+.feature-item {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .feature-item i {
@@ -1889,8 +1903,9 @@ footer::before {
   }
 }
 
-.client-item:hover {
-  /* Animation handled by global card hover rule */
+/* Client item base transition */
+.client-item {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .client-item img {
@@ -2063,8 +2078,9 @@ footer::before {
   height: 100%;
 }
 
-.team-member-card:hover {
-  /* Animation handled by global card hover rule */
+/* Team card base transition */
+.team-member-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .team-member-card h3 {
