@@ -759,6 +759,22 @@ footer::before {
   line-height: 1.2;
 }
 
+.hero-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  background: rgba(7, 175, 223, 0.15); /* subtle background */
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-weight: 600;
+}
+
 .hero-content p {
   font-size: 1.25rem;
   margin-bottom: 30px;
