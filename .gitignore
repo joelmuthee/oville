@@ -1,15 +1,33 @@
-deploy.zip
-oville_deployment.zip
-*.pdf
-*.jpg
-*.jpeg
-*.png
-*.webp
-*.avif
+# Deployment Zips
+*.zip
+
+# Root images and PDFs (raw assets should stay in assets/ folder)
+/*.jpg
+/*.jpeg
+/*.png
+/*.pdf
+/*.webp
+/*.avif
+
+# Patch files and dev logs
+patch.diff
+patch_css.txt
+patch_html.txt
+diff2.txt
+log.txt
+deploy.log
+
+# Directories
+node_modules/
+.vscode/
+.agents/
+.gemini/
+
+# Keep optimized assets
 !assets/images/**/*
 !additional logos/**/*
 !additional photos/**/*
-node_modules/
-.vscode/
+
+# Config
 mcp_config.json
 GHL-MODAL-FIX.md
