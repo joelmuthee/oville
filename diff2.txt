@@ -1,0 +1,28 @@
+﻿diff --git a/css/style.css b/css/style.css
+index 1ee03db..b392435 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -157,6 +157,11 @@ ul {
+ 
+ /* Navigation */
+ .navbar {
++  position: fixed;
++  width: 100%;
++  top: 0;
++  z-index: 1000;
++  height: var(--header-height);
+   display: flex;
+   align-items: center;
+   transition: background 0.4s ease, box-shadow 0.4s ease, height 0.4s ease;
+@@ -173,6 +178,11 @@ ul {
+   box-shadow: none;
+ }
+ 
++/* Make logo white when navbar is transparent over dark backgrounds */
++.navbar:not(.scrolled) .logo img {
++  filter: brightness(0) invert(1);
++}
++
+ .nav-container {
+   display: flex;
+   justify-content: space-between;

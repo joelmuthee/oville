@@ -200,9 +200,18 @@ ul {
 
 .navbar .logo img {
   height: 75px;
-  /* Increased from 65px for better visibility */
   width: auto;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* On scrolled (white) navbar: isolate text as dark, drop the dark blue background by making it white and multiplying */
+  filter: grayscale(1) invert(1) contrast(5);
+  mix-blend-mode: multiply;
+}
+
+/* On transparent (dark) navbar: isolate text as white, drop the dark blue background by making it black and screening */
+.navbar:not(.scrolled) .logo img {
+  filter: grayscale(1) contrast(5);
+  mix-blend-mode: screen;
 }
 
 .navbar .logo img:hover {
@@ -376,6 +385,12 @@ footer {
   padding: 80px 0 30px;
   position: relative;
   overflow: hidden;
+}
+
+/* Footer Logo Extraction Magic */
+footer .logo img {
+  filter: grayscale(1) contrast(5);
+  mix-blend-mode: screen;
 }
 
 /* Centered Entry Accent Bar */

@@ -1,0 +1,5 @@
+﻿2472220 Update footer logo size and nav links
+217f786 fix: update css cache buster to ensure transparent navbar changes apply
+e6282ae style: implement transparent navbar for a more immersive hero experience on mobile and desktop
+f36efa4 fix: adjust header spacing and logo size for better aesthetics and mobile visibility
+456ea6e Final cleanup: Removed sneaky duplicate footer styles that were causing visual glitches
