@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Observe all animateable elements
     const observeAll = () => {
-        const animatedElements = document.querySelectorAll('.fade-in-up, .accreditations .logo-item, .service-card, .philosophy-item, .team-member-card, .client-item, .compliance-card');
+        const animatedElements = document.querySelectorAll('.fade-in-up, .accreditations .logo-item, .service-card, .philosophy-item, .team-member-card, .client-item, .compliance-card, .feature-item');
         animatedElements.forEach(el => {
             observer.observe(el);
             // Check immediately if it's already in view
