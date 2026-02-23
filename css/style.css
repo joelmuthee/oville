@@ -1031,8 +1031,8 @@ footer::before {
   .hero {
     height: 100vh !important;
     min-height: 100vh;
-    padding-top: 20px;
-    /* Dramatically reduced top padding to allow more movement */
+    padding-top: 80px;
+    /* Added more top padding to push content down naturally */
     padding-bottom: 20px;
     display: flex;
     align-items: center;
@@ -1043,8 +1043,8 @@ footer::before {
   }
 
   .hero-content {
-    margin-top: -60px;
-    /* Pushes content higher than true vertical center, but slightly lower than before */
+    margin-top: -20px;
+    /* Pushes content slightly higher than true vertical center, but much lower than the -60px/ -100px states */
     width: 100%;
   }
 
