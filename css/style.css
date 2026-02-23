@@ -211,8 +211,8 @@ ul {
 }
 
 .navbar.scrolled .logo img {
-  filter: none;
-  mix-blend-mode: normal;
+  filter: brightness(0) saturate(100%) invert(14%) sepia(50%) saturate(3000%) hue-rotate(220deg);
+  /* Ensures white parts of the logo are visible as brand blue #262a69 on the light background */
 }
 
 .navbar .logo img:hover {
