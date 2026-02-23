@@ -202,16 +202,11 @@ ul {
   height: 75px;
   width: auto;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  /* On scrolled (white) navbar: isolate text as dark, drop the dark blue background by making it white and multiplying */
-  filter: grayscale(1) invert(1) contrast(5);
-  mix-blend-mode: multiply;
 }
 
-/* On transparent (dark) navbar: isolate text as white, drop the dark blue background by making it black and screening */
 .navbar:not(.scrolled) .logo img {
-  filter: grayscale(1) contrast(5);
-  mix-blend-mode: screen;
+  filter: none;
+  mix-blend-mode: normal;
 }
 
 .navbar .logo img:hover {
@@ -1255,7 +1250,7 @@ footer::before {
   .footer-bottom::before {
     left: 50% !important;
     transform: translateX(-50%) !important;
-    width: 25% !important;
+    width: 50% !important;
   }
 }
 
