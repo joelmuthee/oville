@@ -486,8 +486,7 @@ footer::before {
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  border-bottom-color: var(--accent-color);
+  /* Animation handled by global card hover rule */
 }
 
 .service-icon {
@@ -608,6 +607,36 @@ footer::before {
 .philosophy-item:hover {
   transform: translateY(-10px);
   border-bottom-color: var(--accent-color);
+}
+
+.compliance-card {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  border-left: 5px solid var(--accent-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  height: 100%;
+}
+
+/* Universal Card Hover Animations */
+.service-card:hover,
+.philosophy-item:hover,
+.team-member-card:hover,
+.client-item:hover,
+.feature-item:hover,
+.compliance-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  border-color: var(--accent-color);
+}
+
+.compliance-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .philosophy-header {
@@ -1645,9 +1674,7 @@ footer::before {
 }
 
 .feature-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  border-color: var(--accent-color);
+  /* Animation handled by global card hover rule */
 }
 
 .feature-item i {
@@ -1863,8 +1890,7 @@ footer::before {
 }
 
 .client-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  /* Animation handled by global card hover rule */
 }
 
 .client-item img {
@@ -2038,7 +2064,7 @@ footer::before {
 }
 
 .team-member-card:hover {
-  transform: translateY(-5px);
+  /* Animation handled by global card hover rule */
 }
 
 .team-member-card h3 {
