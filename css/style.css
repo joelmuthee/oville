@@ -1746,7 +1746,30 @@ footer::before {
   align-items: center;
   width: 100%;
   height: 120px;
-  transition: var(--transition);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s ease;
+}
+
+/* Staggered Animations for Client Items */
+.clients-grid .client-item:nth-child(4n+2) {
+  transition-delay: 0.15s;
+}
+
+.clients-grid .client-item:nth-child(4n+3) {
+  transition-delay: 0.3s;
+}
+
+.clients-grid .client-item:nth-child(4n+4) {
+  transition-delay: 0.45s;
+}
+
+@media (max-width: 768px) {
+  .clients-grid .client-item:nth-child(odd) {
+    transition-delay: 0s;
+  }
+
+  .clients-grid .client-item:nth-child(even) {
+    transition-delay: 0.2s;
+  }
 }
 
 .client-item:hover {
