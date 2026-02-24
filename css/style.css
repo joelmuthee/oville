@@ -433,7 +433,7 @@ footer::after {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 25%;
+  width: 75%;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
   opacity: 0.3;
