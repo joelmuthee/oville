@@ -5,16 +5,16 @@
  */
 
 :root {
-  --primary-color: #262a69;
-  --primary-dark: #1a1d4a;
-  --accent-color: #07afdf;
-  --accent-hover: #058bb3;
+  --primary-color: #333333;
+  --primary-dark: #1a1a1a;
+  --accent-color: #ffb300;
+  --accent-hover: #e6a100;
   --text-dark: #1a1a1a;
   --text-light: #f5f5f5;
   --text-grey: #666666;
   --bg-light: #ffffff;
   --bg-off-white: #f8f9fa;
-  --bg-dark: #0f112e;
+  --bg-dark: #222222;
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   --header-height: 85px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1348,12 +1348,6 @@ footer::before {
     transform: translateX(-50%) !important;
     width: 50% !important;
   }
-
-  /* Center accent divider bars inside service sections on mobile */
-  .service-content > div[style*="background"] {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
 }
 
 .gallery-item:hover img {
@@ -2432,4 +2426,35 @@ footer::before {
     align-self: flex-start;
   }
 
+}
+/* ------------------------------------------- */
+/* IMAGE RESPONSIVENESS AND CROPPING           */
+/* ------------------------------------------- */
+
+.gallery-item img {
+    width: 100%;
+    height: 300px !important;
+    object-fit: cover !important;
+}
+
+.slider-img, 
+.service-detail-section img,
+#story img,
+.who-we-are-image img {
+    width: 100%;
+    height: 450px !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+}
+
+@media (max-width: 768px) {
+    .gallery-item img {
+        height: 250px !important;
+    }
+    .slider-img, 
+    .service-detail-section img,
+    #story img,
+    .who-we-are-image img {
+        height: 300px !important;
+    }
 }
