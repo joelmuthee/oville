@@ -87,7 +87,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=6010">
+    <link rel="stylesheet" href="css/style.css?v=6011">
 
     <style>
         @media (max-width: 768px) {
@@ -914,7 +914,7 @@
         </div>
     </div>
 
-    <script src="js/script.js?v=6010"></script>
+    <script src="js/script.js?v=6011"></script>
     <script src="https://widgets.leadconnectorhq.com/loader.js"
         data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
         data-widget-id="695781bbe3cb111b8ef7e5d9">
@@ -946,6 +946,13 @@
                             if (modal) {
                                 modal.classList.add('active');
                                 document.body.style.overflow = 'hidden';
+                                // Track as a virtual pageview for easy Goal/Conversion setup in GA4
+                                if (typeof gtag === 'function') {
+                                    gtag('event', 'page_view', {
+                                        'page_path': '/request-profile',
+                                        'page_title': 'Direct Profile Request'
+                                    });
+                                }
                             }
                         }, 1200);
                     }
