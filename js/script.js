@@ -306,16 +306,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Open Profile Widget via URL Hash (#request-profile)
     const openProfileWidget = () => {
-        if (window.location.hash === '#request-profile' && profileModal) {
-            profileModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            
-            // Send tracking event if gtag is defined
-            if (typeof gtag === 'function') {
-                gtag('event', 'request_profile_hash_open', { 
-                    'event_category': 'engagement', 
-                    'event_label': 'Direct Hash Link' 
-                });
+        if (window.location.hash === '#request-profile') {
+            const targetSection = document.getElementById('request-profile');
+            if (targetSection) {
+                // Ensure browser scrolls to target section first
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Wait for smooth scroll to complete before popping modal
+                setTimeout(() => {
+                    if (profileModal) {
+                        profileModal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        
+                        // Send tracking event if gtag is defined
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'request_profile_hash_open', { 
+                                'event_category': 'engagement', 
+                                'event_label': 'Direct Hash Link' 
+                            });
+                        }
+                    }
+                }, 800);
             }
         }
     };
