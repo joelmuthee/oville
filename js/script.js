@@ -342,3 +342,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// Handle Profile Widget Opening (Moved outside DOMContentLoaded to wait for images)
+window.addEventListener('load', () => {
+    const profileModal = document.getElementById('custom-ghl-modal');
+
+    const openProfileWidget = () => {
+        if (window.location.hash === '#request-profile') {
+            const targetSection = document.getElementById('request-profile');
+            if (targetSection) {
+                // Smooth scroll to fixed section
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Open Modal after scroll
+                setTimeout(() => {
+                    if (profileModal) {
+                        profileModal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'request_profile_hash_open', { 'event_category': 'engagement', 'event_label': 'Direct Hash Link' });
+                        }
+                    }
+                }, 1000);
+            }
+        }
+    };
+
+    openProfileWidget();
+    window.addEventListener('hashchange', openProfileWidget);
+});

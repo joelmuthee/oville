@@ -2352,6 +2352,10 @@ footer::before {
   flex-shrink: 0;
 }
 
+#request-profile {
+  scroll-margin-top: 120px;
+}
+
 /* Mobile Overrides - Must come AFTER global styles */
 @media (max-width: 768px) {
   .profile-download-section {
