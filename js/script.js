@@ -304,21 +304,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Open Profile Widget via URL Hash (#request-profile)
-    const openProfileWidget = () => {
+    // Handle Profile Widget Opening via URL Hash (#request-profile)
+    const handleProfileHash = () => {
         if (window.location.hash === '#request-profile') {
-            const targetSection = document.getElementById('request-profile');
-            if (targetSection) {
-                // Ensure browser scrolls to target section first
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+            const target = document.getElementById('request-profile');
+            const modal = document.getElementById('custom-ghl-modal');
+            
+            if (target) {
+                // Smooth scroll to section
+                const offset = 120;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = target.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
 
-                // Wait for smooth scroll to complete before popping modal
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Open Modal after a short, snappy delay (450ms instead of 1000ms+)
                 setTimeout(() => {
-                    if (profileModal) {
-                        profileModal.classList.add('active');
+                    if (modal) {
+                        modal.classList.add('active');
                         document.body.style.overflow = 'hidden';
                         
-                        // Send tracking event if gtag is defined
+                        // Tracking
                         if (typeof gtag === 'function') {
                             gtag('event', 'request_profile_hash_open', { 
                                 'event_category': 'engagement', 
@@ -326,48 +337,20 @@ document.addEventListener('DOMContentLoaded', () => {
                             });
                         }
                     }
-                }, 800);
+                }, 450);
             }
         }
     };
 
-    // Check on load
-    openProfileWidget();
-
-    // Check on hash change
-    window.addEventListener('hashchange', openProfileWidget);
+    // Listen for hash changes and initial load
+    window.addEventListener('hashchange', handleProfileHash);
+    // Use a small delay on load to ensure smooth scroll isn't interrupted by browser's default anchor jump
+    if (window.location.hash === '#request-profile') {
+        setTimeout(handleProfileHash, 100);
+    }
 
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });
 
-});
-
-// Handle Profile Widget Opening (Moved outside DOMContentLoaded to wait for images)
-window.addEventListener('load', () => {
-    const profileModal = document.getElementById('custom-ghl-modal');
-
-    const openProfileWidget = () => {
-        if (window.location.hash === '#request-profile') {
-            const targetSection = document.getElementById('request-profile');
-            if (targetSection) {
-                // Smooth scroll to fixed section
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-
-                // Open Modal after scroll
-                setTimeout(() => {
-                    if (profileModal) {
-                        profileModal.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                        if (typeof gtag === 'function') {
-                            gtag('event', 'request_profile_hash_open', { 'event_category': 'engagement', 'event_label': 'Direct Hash Link' });
-                        }
-                    }
-                }, 1000);
-            }
-        }
-    };
-
-    openProfileWidget();
-    window.addEventListener('hashchange', openProfileWidget);
 });

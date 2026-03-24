@@ -378,7 +378,7 @@
         </div>
     </div>
 
-    <script src="js/script.js?v=6011"></script>
+    <script src="js/script.js?v=6012"></script>
     <script src="https://widgets.leadconnectorhq.com/loader.js"
         data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
         data-widget-id="695781bbe3cb111b8ef7e5d9">
@@ -386,40 +386,5 @@
     <script src="https://link.essenceautomations.com/js/external-tracking.js"
         data-tracking-id="tk_6d927793f58b41a581044ac398a0131d">
     </script>
-    <script>
-        (function () {
-            function triggerScroll() {
-                if (window.location.hash === '#request-profile') {
-                    const el = document.getElementById('request-profile');
-                    if (el) {
-                        const offset = 120;
-                        const bodyRect = document.body.getBoundingClientRect().top;
-                        const elementRect = el.getBoundingClientRect().top;
-                        const elementPosition = elementRect - bodyRect;
-                        const offsetPosition = elementPosition - offset;
-                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                        setTimeout(() => {
-                            const modal = document.getElementById('custom-ghl-modal');
-                            if (modal) {
-                                modal.classList.add('active');
-                                document.body.style.overflow = 'hidden';
-                                // Track as virtual pageview for easy Goal setup in GA4
-                                if (typeof gtag === 'function') {
-                                    gtag('event', 'page_view', {
-                                        'page_path': '/request-profile',
-                                        'page_title': 'Direct Profile Request'
-                                    });
-                                }
-                            }
-                        }, 1200);
-                    }
-                }
-            }
-            window.addEventListener('load', triggerScroll);
-            window.addEventListener('hashchange', triggerScroll);
-            if (document.readyState === 'complete') triggerScroll();
-        })();
-    </script>
 </body>
-
 </html>
