@@ -304,6 +304,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Open Profile Widget via URL Hash (#request-profile)
+    const openProfileWidget = () => {
+        if (window.location.hash === '#request-profile' && profileModal) {
+            profileModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Send tracking event if gtag is defined
+            if (typeof gtag === 'function') {
+                gtag('event', 'request_profile_hash_open', { 
+                    'event_category': 'engagement', 
+                    'event_label': 'Direct Hash Link' 
+                });
+            }
+        }
+    };
+
+    // Check on load
+    openProfileWidget();
+
+    // Check on hash change
+    window.addEventListener('hashchange', openProfileWidget);
+
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });
