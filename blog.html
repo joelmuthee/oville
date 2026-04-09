@@ -424,18 +424,19 @@
             .cat-tab { padding: 14px 14px; font-size: 0.82rem; }
         }
     
-        /* Gradient card thumbnails - no stock photos */
-        .card-img-gradient {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.8rem;
-            color: rgba(255,255,255,0.15);
+        /* Real project photo card thumbnails */
+        .card-img img {
+            width: 100%; height: 100%; object-fit: cover;
+            position: absolute; inset: 0; display: block;
+            transition: transform 0.4s ease;
         }
+        .article-card:hover .card-img img { transform: scale(1.06); }
+        .featured-img img {
+            width: 100%; height: 100%; object-fit: cover;
+            position: absolute; inset: 0; display: block;
+            transition: transform 0.5s ease;
+        }
+        .featured-article:hover .featured-img img { transform: scale(1.04); }
         .card-img { position: relative; }
         .featured-img-gradient {
             width: 100%;
@@ -542,7 +543,7 @@
             <div data-cat="forensic" class="filterable">
                 <a href="why-buildings-collapse-kenya.html" class="featured-article fade-in-up">
                     <div class="featured-img">
-                    <div class="featured-img-gradient" style="background:linear-gradient(135deg,#0f112e 0%,#262a69 60%,#07afdf22 100%);"><i class="fas fa-building" style="color:rgba(255,255,255,0.12);font-size:5rem;"></i></div>
+                    <img src="assets/images/projects/building_skeleton_side.jpg" alt="Building structural skeleton under construction in Kenya" loading="lazy">
                     <span class="featured-badge">&#9733; Featured</span>
                     </div>
                     <div class="featured-body">
@@ -568,7 +569,7 @@
 
                 <a href="what-is-forensic-engineering-kenya.html" class="article-card fade-in-up" data-cat="forensic">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#161850 0%,#262a69 100%);"><i class="fas fa-search"></i></div>
+                    <img src="assets/images/projects/forensic_ndt_new.jpg" alt="Forensic NDT testing conducted on a building" loading="lazy">
                     <span class="card-category cat-forensic">Forensic Engineering</span>
                     </div>
                     <div class="card-body">
@@ -583,7 +584,7 @@
 
                 <a href="building-collapse-investigation-kenya.html" class="article-card fade-in-up" data-cat="forensic">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#161850 0%,#262a69 100%);"><i class="fas fa-search"></i></div>
+                    <img src="assets/images/about_construction_site.jpg" alt="Construction site investigation in Kenya" loading="lazy">
                     <span class="card-category cat-forensic">Forensic Engineering</span>
                     </div>
                     <div class="card-body">
@@ -598,7 +599,7 @@
 
                 <a href="root-cause-analysis-structural-failures.html" class="article-card fade-in-up" data-cat="forensic">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#161850 0%,#262a69 100%);"><i class="fas fa-search"></i></div>
+                    <img src="assets/images/projects/construction_3.jpg" alt="Structural failure analysis at a construction site" loading="lazy">
                     <span class="card-category cat-forensic">Forensic Engineering</span>
                     </div>
                     <div class="card-body">
@@ -622,7 +623,7 @@
 
                 <a href="structural-audit-kenya.html" class="article-card fade-in-up" data-cat="audit">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#0d2b52 0%,#1e4080 100%);"><i class="fas fa-clipboard-check"></i></div>
+                    <img src="assets/images/team/oville_at_work.jpg" alt="Oville Associates engineers conducting a structural audit" loading="lazy">
                     <span class="card-category cat-audit">Structural Audits</span>
                     </div>
                     <div class="card-body">
@@ -637,7 +638,7 @@
 
                 <a href="building-safety-audit-kenya-checklist.html" class="article-card fade-in-up" data-cat="audit">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#0d2b52 0%,#1e4080 100%);"><i class="fas fa-clipboard-check"></i></div>
+                    <img src="assets/images/projects/building_rooftop.jpg" alt="Building rooftop inspection and safety audit" loading="lazy">
                     <span class="card-category cat-audit">Structural Audits</span>
                     </div>
                     <div class="card-body">
@@ -652,7 +653,7 @@
 
                 <a href="structural-engineer-cost-kenya.html" class="article-card fade-in-up" data-cat="audit">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#0d2b52 0%,#1e4080 100%);"><i class="fas fa-clipboard-check"></i></div>
+                    <img src="assets/images/projects/steel_structure_warehouse.jpg" alt="Steel structure framing for a warehouse project in Kenya" loading="lazy">
                     <span class="card-category cat-audit">Structural Audits</span>
                     </div>
                     <div class="card-body">
@@ -667,7 +668,7 @@
 
                 <a href="structural-assessment-vs-audit.html" class="article-card fade-in-up" data-cat="audit">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#0d2b52 0%,#1e4080 100%);"><i class="fas fa-clipboard-check"></i></div>
+                    <img src="assets/images/projects/construction_2.jpg" alt="Engineers reviewing structural assessment data on site" loading="lazy">
                     <span class="card-category cat-audit">Structural Audits</span>
                     </div>
                     <div class="card-body">
@@ -691,7 +692,7 @@
 
                 <a href="non-destructive-testing-buildings-kenya.html" class="article-card fade-in-up" data-cat="ndt">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#065a6e 0%,#07afdf 100%);"><i class="fas fa-microscope"></i></div>
+                    <img src="assets/images/projects/concrete_villa_structure.jpg" alt="NDT concrete inspection on a Kenyan building" loading="lazy">
                     <span class="card-category cat-ndt">NDT &amp; Testing</span>
                     </div>
                     <div class="card-body">
@@ -706,7 +707,7 @@
 
                 <a href="ferroscan-testing-kenya.html" class="article-card fade-in-up" data-cat="ndt">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#065a6e 0%,#07afdf 100%);"><i class="fas fa-microscope"></i></div>
+                    <img src="assets/images/projects/site_construction.jpg" alt="Construction site where ferroscan testing is applied" loading="lazy">
                     <span class="card-category cat-ndt">NDT &amp; Testing</span>
                     </div>
                     <div class="card-body">
@@ -721,7 +722,7 @@
 
                 <a href="schmidt-hammer-testing-kenya.html" class="article-card fade-in-up" data-cat="ndt">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#065a6e 0%,#07afdf 100%);"><i class="fas fa-microscope"></i></div>
+                    <img src="assets/images/projects/construction_1.jpg" alt="Concrete structure for Schmidt hammer rebound testing" loading="lazy">
                     <span class="card-category cat-ndt">NDT &amp; Testing</span>
                     </div>
                     <div class="card-body">
@@ -736,7 +737,7 @@
 
                 <a href="concrete-testing-nairobi.html" class="article-card fade-in-up" data-cat="ndt">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#065a6e 0%,#07afdf 100%);"><i class="fas fa-microscope"></i></div>
+                    <img src="assets/images/projects/sewerline_real.jpg" alt="Concrete and infrastructure project in Nairobi" loading="lazy">
                     <span class="card-category cat-ndt">NDT &amp; Testing</span>
                     </div>
                     <div class="card-body">
@@ -760,7 +761,7 @@
 
                 <a href="high-rise-structural-design-nairobi.html" class="article-card fade-in-up" data-cat="highrise">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#1a2e50 0%,#2c5282 100%);"><i class="fas fa-building"></i></div>
+                    <img src="assets/images/projects/sebco_heights.png" alt="Sebco Heights high-rise apartment building in Nairobi" loading="lazy">
                     <span class="card-category cat-highrise">High-Rise Design</span>
                     </div>
                     <div class="card-body">
@@ -775,7 +776,7 @@
 
                 <a href="seismic-design-buildings-kenya.html" class="article-card fade-in-up" data-cat="highrise">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#1a2e50 0%,#2c5282 100%);"><i class="fas fa-building"></i></div>
+                    <img src="assets/images/projects/tong_piny_apartments.png" alt="Tong Piny apartment development in Nairobi" loading="lazy">
                     <span class="card-category cat-highrise">High-Rise Design</span>
                     </div>
                     <div class="card-body">
@@ -790,7 +791,7 @@
 
                 <a href="structural-design-steep-terrain-nairobi.html" class="article-card fade-in-up" data-cat="highrise">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#1a2e50 0%,#2c5282 100%);"><i class="fas fa-building"></i></div>
+                    <img src="assets/images/projects/windy_ridge_access_road.jpg" alt="Access road on steep terrain in Nairobi" loading="lazy">
                     <span class="card-category cat-highrise">High-Rise Design</span>
                     </div>
                     <div class="card-body">
@@ -814,7 +815,7 @@
 
                 <a href="kenya-building-codes-explained.html" class="article-card fade-in-up" data-cat="regulation">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#2d3748 0%,#4a5568 100%);"><i class="fas fa-gavel"></i></div>
+                    <img src="assets/images/engineering_team.jpg" alt="Oville Associates engineering team" loading="lazy">
                     <span class="card-category cat-regulation">Regulations</span>
                     </div>
                     <div class="card-body">
@@ -829,7 +830,7 @@
 
                 <a href="engineers-board-of-kenya-ebk.html" class="article-card fade-in-up" data-cat="regulation">
                     <div class="card-img">
-                    <div class="card-img-gradient" style="background:linear-gradient(135deg,#2d3748 0%,#4a5568 100%);"><i class="fas fa-gavel"></i></div>
+                    <img src="assets/images/team/eng_karara.jpg" alt="EBK-registered structural engineer at Oville Associates" loading="lazy">
                     <span class="card-category cat-regulation">Regulations</span>
                     </div>
                     <div class="card-body">
