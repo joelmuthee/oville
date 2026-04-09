@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Insights | Oville Associates Blog</title>
+    <meta name="description"
+        content="Expert insights on civil & structural engineering, forensic investigations, NDT testing, and construction in Kenya and East Africa from Oville Associates.">
+    <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+    <link rel="shortcut icon" href="assets/images/favicon.jpg" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Engineering Insights | Oville Associates Blog">
+    <meta property="og:description" content="Expert insights on civil & structural engineering, forensic investigations, NDT testing, and construction in Kenya and East Africa.">
+    <meta property="og:url" content="https://ovilleassociates.com/blog.html">
+    <meta property="og:image" content="https://ovilleassociates.com/assets/images/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Oville Associates">
+
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RDWB7CR3J3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-RDWB7CR3J3');
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=6011">
+
+    <style>
+        /* ── Page Hero ─────────────────────────────────────────── */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 60%, #1a4a6b 100%);
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('assets/images/hero/hero_2.jpg') center/cover no-repeat;
+            opacity: 0.12;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60px;
+            background: linear-gradient(to top, #f8f9fa, transparent);
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+        .page-hero-content .hero-badge {
+            display: inline-block;
+            background: rgba(7,175,223,0.2);
+            border: 1px solid rgba(7,175,223,0.5);
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+        .page-hero-content h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        .page-hero-content p {
+            color: rgba(255,255,255,0.75);
+            font-size: 1.1rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ── Category Tabs ─────────────────────────────────────── */
+        .blog-nav {
+            background: white;
+            border-bottom: 1px solid #e8ecf0;
+            position: sticky;
+            top: var(--header-height);
+            z-index: 99;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .blog-nav-inner {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            overflow-x: auto;
+            padding: 0 20px;
+            scrollbar-width: none;
+        }
+        .blog-nav-inner::-webkit-scrollbar { display: none; }
+        .cat-tab {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 16px 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-grey);
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            font-family: 'Outfit', sans-serif;
+        }
+        .cat-tab i { font-size: 0.85rem; }
+        .cat-tab:hover { color: var(--primary-color); border-bottom-color: rgba(38,42,105,0.25); }
+        .cat-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--accent-color);
+        }
+        .cat-tab .count {
+            background: var(--bg-off-white);
+            color: var(--text-grey);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 20px;
+            min-width: 22px;
+            text-align: center;
+        }
+        .cat-tab.active .count {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* ── Blog Layout ───────────────────────────────────────── */
+        .blog-section {
+            background: var(--bg-off-white);
+            padding: 60px 0 100px;
+        }
+
+        /* Featured Article */
+        .featured-article {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.09);
+            margin-bottom: 48px;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+        .featured-article:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+        }
+        .featured-img {
+            position: relative;
+            overflow: hidden;
+            min-height: 340px;
+        }
+        .featured-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .featured-article:hover .featured-img img { transform: scale(1.04); }
+        .featured-badge {
+            position: absolute;
+            top: 20px; left: 20px;
+            background: var(--accent-color);
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 20px;
+        }
+        .featured-body {
+            padding: 48px 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .article-cat {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 14px;
+        }
+        .featured-body h2 {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .featured-body p {
+            color: var(--text-grey);
+            font-size: 0.97rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.82rem;
+            color: #999;
+        }
+        .article-meta span { display: flex; align-items: center; gap: 5px; }
+        .read-more-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            transition: gap 0.2s;
+        }
+        .featured-article:hover .read-more-link { gap: 12px; }
+
+        /* Article Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .article-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+        }
+        .card-img {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        .card-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .article-card:hover .card-img img { transform: scale(1.06); }
+        .card-category {
+            position: absolute;
+            bottom: 12px; left: 14px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: white;
+            background: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        .card-category.cat-forensic   { background: #c0392b; }
+        .card-category.cat-ndt        { background: #1a5276; }
+        .card-category.cat-audit      { background: #117a65; }
+        .card-category.cat-highrise   { background: #6c3483; }
+        .card-category.cat-regulation { background: #d35400; }
+
+        .card-body {
+            padding: 24px 24px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-body h3 {
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .card-body p {
+            font-size: 0.88rem;
+            color: var(--text-grey);
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 16px;
+        }
+        .card-footer-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 14px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.78rem;
+            color: #aaa;
+        }
+        .card-footer-meta .read-time {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Coming Soon badge on future posts */
+        .coming-soon-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15,17,46,0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .coming-soon-badge {
+            background: white;
+            color: var(--primary-color);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+        .article-card.future { opacity: 0.82; }
+        .article-card.future:hover { transform: translateY(-2px); }
+
+        /* Section Divider Label */
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 44px 0 24px;
+        }
+        .section-label h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            white-space: nowrap;
+            margin: 0;
+        }
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, #ddd, transparent);
+        }
+
+        /* Newsletter CTA band */
+        .blog-cta {
+            background: linear-gradient(135deg, var(--primary-color), #1a4a6b);
+            border-radius: 16px;
+            padding: 56px 48px;
+            text-align: center;
+            margin-top: 64px;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-cta::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 220px; height: 220px;
+            background: rgba(7,175,223,0.12);
+            border-radius: 50%;
+        }
+        .blog-cta::after {
+            content: '';
+            position: absolute;
+            bottom: -40px; left: -40px;
+            width: 160px; height: 160px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .blog-cta h2 { color: white; font-size: 1.8rem; margin-bottom: 12px; position: relative; z-index: 1; }
+        .blog-cta p  { color: rgba(255,255,255,0.75); margin-bottom: 28px; position: relative; z-index: 1; }
+        .blog-cta a  { position: relative; z-index: 1; }
+
+        /* No results state */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-grey);
+        }
+        .no-results i { font-size: 3rem; color: #ccc; margin-bottom: 16px; }
+
+        /* ── Responsive ─────────────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .articles-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .page-hero-content h1 { font-size: 2rem; }
+            .featured-article { grid-template-columns: 1fr; }
+            .featured-img { min-height: 220px; }
+            .featured-body { padding: 28px 24px; }
+            .featured-body h2 { font-size: 1.35rem; }
+            .articles-grid { grid-template-columns: 1fr; }
+            .blog-cta { padding: 36px 24px; }
+            .blog-cta h2 { font-size: 1.4rem; }
+            .cat-tab { padding: 14px 14px; font-size: 0.82rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="./" class="logo">
+                <img src="assets/images/logo_transparent.png" alt="Oville Associates Logo">
+            </a>
+            <div class="nav-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-menu">
+                <li><a href="./" class="nav-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fas fa-chevron-down" style="font-size:0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#story" class="dropdown-item">Our Story</a>
+                        <a href="about.html#team" class="dropdown-item">The Team</a>
+                        <a href="about.html#compliance" class="dropdown-item">Compliance</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size:0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html#engineering" class="dropdown-item">Civil &amp; Structural</a>
+                        <a href="services.html#forensic" class="dropdown-item">Forensic Engineering</a>
+                        <a href="services.html#pm" class="dropdown-item">Project Management</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="portfolio.html" class="nav-link">Portfolio <i class="fas fa-chevron-down" style="font-size:0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="portfolio.html#featured" class="dropdown-item">Featured Projects</a>
+                        <a href="portfolio.html#clients" class="dropdown-item">Client List</a>
+                    </div>
+                </li>
+                <li><a href="blog.html" class="nav-link active">Insights</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-accent" style="padding:8px 20px;">Let's Engage</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <div class="container page-hero-content fade-in-up">
+            <span class="hero-badge">Engineering Intelligence</span>
+            <h1>Insights &amp; <span class="text-accent">Technical Resources</span></h1>
+            <p>Expert perspectives on structural engineering, forensic investigation, NDT testing, and the built environment in Kenya and East Africa.</p>
+        </div>
+    </header>
+
+    <!-- Category Filter Bar -->
+    <div class="blog-nav">
+        <div class="container">
+            <div class="blog-nav-inner">
+                <button class="cat-tab active" data-cat="all">
+                    <i class="fas fa-th-large"></i> All Articles
+                    <span class="count">17</span>
+                </button>
+                <button class="cat-tab" data-cat="forensic">
+                    <i class="fas fa-search"></i> Forensic Engineering
+                    <span class="count">4</span>
+                </button>
+                <button class="cat-tab" data-cat="audit">
+                    <i class="fas fa-clipboard-check"></i> Structural Audits
+                    <span class="count">4</span>
+                </button>
+                <button class="cat-tab" data-cat="ndt">
+                    <i class="fas fa-microscope"></i> NDT &amp; Testing
+                    <span class="count">4</span>
+                </button>
+                <button class="cat-tab" data-cat="highrise">
+                    <i class="fas fa-building"></i> High-Rise Design
+                    <span class="count">3</span>
+                </button>
+                <button class="cat-tab" data-cat="regulation">
+                    <i class="fas fa-gavel"></i> Regulations
+                    <span class="count">2</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Content -->
+    <section class="blog-section">
+        <div class="container">
+
+            <!-- Featured Article -->
+            <div data-cat="forensic" class="filterable">
+                <a href="#" class="featured-article fade-in-up">
+                    <div class="featured-img">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Building collapse investigation Kenya">
+                        <span class="featured-badge">&#9733; Featured</span>
+                    </div>
+                    <div class="featured-body">
+                        <span class="article-cat"><i class="fas fa-search"></i> Forensic Engineering</span>
+                        <h2>Why Buildings Collapse in Kenya: Causes, Data &amp; How to Prevent It</h2>
+                        <p>Kenya loses dozens of buildings to structural failure every year. This in-depth guide examines the root causes — from substandard materials and unqualified supervision to soil conditions and design errors — and explains what a forensic investigation actually uncovers.</p>
+                        <div class="article-meta">
+                            <span><i class="fas fa-user-tie"></i> Eng. P.K. Ngunjiri</span>
+                            <span><i class="fas fa-calendar"></i> Coming Soon</span>
+                            <span><i class="fas fa-clock"></i> 15 min read</span>
+                        </div>
+                        <span class="read-more-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Articles Grid — Cluster 1: Forensic Engineering -->
+            <div class="section-label">
+                <h3><i class="fas fa-search" style="color:var(--accent-color);margin-right:8px;"></i>Forensic Engineering &amp; Failure Analysis</h3>
+            </div>
+
+            <div class="articles-grid">
+
+                <a href="#" class="article-card future fade-in-up" data-cat="forensic">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1590527575568-9e0f9fcb1438?w=600&q=80" alt="Forensic engineering Kenya">
+                        <span class="card-category cat-forensic">Forensic Engineering</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>What Is Forensic Engineering? A Practical Guide for Kenya</h3>
+                        <p>Forensic engineering is a specialised discipline used to investigate structural failures, determine liability, and guide remedial action. Learn when you need it and what the process involves.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 8 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="forensic">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Building collapse investigation">
+                        <span class="card-category cat-forensic">Forensic Engineering</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Building Collapse Investigation: What Happens After a Failure?</h3>
+                        <p>From the first site visit to the final forensic report — a step-by-step walkthrough of how structural engineers investigate a collapse, what evidence is collected, and how findings are used.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 10 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="forensic">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80" alt="Root cause analysis structural failure">
+                        <span class="card-category cat-forensic">Forensic Engineering</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Root Cause Analysis of Structural Failures: Methodology &amp; Examples</h3>
+                        <p>Not all building failures are visible cracks. This guide explains how engineers systematically trace failures back to their origin — design flaws, construction errors, material defects, or misuse.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 9 min</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div><!-- /forensic grid -->
+
+            <!-- Cluster 2: Structural Audits -->
+            <div class="section-label">
+                <h3><i class="fas fa-clipboard-check" style="color:var(--accent-color);margin-right:8px;"></i>Structural Audits &amp; Inspections</h3>
+            </div>
+
+            <div class="articles-grid">
+
+                <a href="#" class="article-card future fade-in-up" data-cat="audit">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="Structural audit Kenya">
+                        <span class="card-category cat-audit">Structural Audits</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Structural Audit in Kenya: What It Involves and Why It Matters</h3>
+                        <p>Government bodies and responsible property owners are increasingly commissioning structural audits. This ultimate guide explains the process, what engineers look for, and what the report contains.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 12 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="audit">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Building safety audit checklist">
+                        <span class="card-category cat-audit">Structural Audits</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Building Safety Audit Kenya: The Complete Checklist</h3>
+                        <p>A practical walkthrough of every item a structural engineer checks during a building safety audit — from foundations and columns to roof connections and drainage systems.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 11 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="audit">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?w=600&q=80" alt="Structural engineer cost Kenya">
+                        <span class="card-category cat-audit">Structural Audits</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>How Much Does a Structural Engineer Cost in Kenya?</h3>
+                        <p>A transparent breakdown of structural engineering fees in Kenya — from audit and assessment costs to full design commissions — based on the EBK scale of fees and current market rates.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 7 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="audit">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Structural assessment vs audit">
+                        <span class="card-category cat-audit">Structural Audits</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Structural Assessment vs. Structural Audit: What's the Difference?</h3>
+                        <p>The terms are often used interchangeably — but they mean different things. This explainer clarifies what each engagement entails and when to commission one over the other.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 6 min</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div><!-- /audit grid -->
+
+            <!-- Cluster 3: NDT & Testing -->
+            <div class="section-label">
+                <h3><i class="fas fa-microscope" style="color:var(--accent-color);margin-right:8px;"></i>NDT &amp; Concrete Testing</h3>
+            </div>
+
+            <div class="articles-grid">
+
+                <a href="#" class="article-card future fade-in-up" data-cat="ndt">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80" alt="Non-destructive testing buildings Kenya">
+                        <span class="card-category cat-ndt">NDT &amp; Testing</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Non-Destructive Testing (NDT) for Buildings in Kenya: A Complete Guide</h3>
+                        <p>NDT lets engineers assess structural integrity without damaging the building. This guide covers the six main methods — and explains which one is right for your situation.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 13 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="ndt">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="Ferroscan testing">
+                        <span class="card-category cat-ndt">NDT &amp; Testing</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Ferroscan Testing: How It Works and When You Need It</h3>
+                        <p>Ferroscan uses electromagnetic impulses to locate reinforcement bars inside concrete without drilling. Here's how Oville's Ferroscan detects rebar size, spacing, and cover depth — all non-invasively.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 8 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="ndt">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1563906267088-b029e7101114?w=600&q=80" alt="Schmidt Hammer concrete testing">
+                        <span class="card-category cat-ndt">NDT &amp; Testing</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Schmidt Hammer Testing: Measuring Concrete Strength On-Site</h3>
+                        <p>The Schmidt rebound hammer is the fastest way to estimate concrete compressive strength in an existing structure. Learn how it works, what affects accuracy, and how to read the results.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 7 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="ndt">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80" alt="Concrete cube testing Nairobi">
+                        <span class="card-category cat-ndt">NDT &amp; Testing</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Concrete Testing in Nairobi: Cube Testing and What the Results Mean</h3>
+                        <p>Cube testing is a standard quality-control requirement on any construction site. This guide explains the process, acceptable strength thresholds, and what to do when results fail.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 8 min</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div><!-- /ndt grid -->
+
+            <!-- Cluster 4: High-Rise Design -->
+            <div class="section-label">
+                <h3><i class="fas fa-building" style="color:var(--accent-color);margin-right:8px;"></i>High-Rise &amp; Structural Design</h3>
+            </div>
+
+            <div class="articles-grid">
+
+                <a href="#" class="article-card future fade-in-up" data-cat="highrise">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="High-rise structural design Nairobi">
+                        <span class="card-category cat-highrise">High-Rise Design</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>High-Rise Structural Design in Nairobi: Challenges and Solutions</h3>
+                        <p>Designing a 10+ storey building in Nairobi means navigating expansive soils, seismic zones, and a rapidly evolving planning environment. Lessons from Oville's high-rise portfolio.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. P.K. Ngunjiri</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 11 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="highrise">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Seismic design Kenya buildings">
+                        <span class="card-category cat-highrise">High-Rise Design</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Seismic Design for Buildings in Kenya: What Engineers Need to Know</h3>
+                        <p>Kenya sits within an active rift zone — yet seismic considerations are frequently overlooked in building design. This guide explains what the Kenya Building Code requires and how to design for it.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 10 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="highrise">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Structural design steep terrain Nairobi">
+                        <span class="card-category cat-highrise">High-Rise Design</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Structural Design for Steep Terrain: Lessons from Nairobi Developments</h3>
+                        <p>Nairobi's hillside suburbs present unique structural challenges. Drawing on projects like the Kitusuru Town Houses, this article covers slope stability, retaining walls, and foundation strategy.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 9 min</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div><!-- /highrise grid -->
+
+            <!-- Cluster 5: Regulations -->
+            <div class="section-label">
+                <h3><i class="fas fa-gavel" style="color:var(--accent-color);margin-right:8px;"></i>Regulations &amp; Professional Standards</h3>
+            </div>
+
+            <div class="articles-grid">
+
+                <a href="#" class="article-card future fade-in-up" data-cat="regulation">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Kenya building codes">
+                        <span class="card-category cat-regulation">Regulations</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Kenya Building Codes Explained: What Developers and Owners Need to Know</h3>
+                        <p>A plain-language guide to the Kenya Building Code — covering structural loads, material standards, inspection requirements, and what happens when buildings don't comply.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 10 min</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card future fade-in-up" data-cat="regulation">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80" alt="Engineers Board Kenya registration">
+                        <span class="card-category cat-regulation">Regulations</span>
+                        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Engineers Board of Kenya (EBK): Registration and Why It Matters</h3>
+                        <p>Why you should only hire EBK-registered engineers — and what the registration process requires. An overview of professional obligations under the Engineers Act.</p>
+                        <div class="card-footer-meta">
+                            <span>Eng. Oville Team</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 6 min</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div><!-- /regulation grid -->
+
+            <!-- No results state -->
+            <div class="no-results" id="no-results">
+                <i class="fas fa-search"></i>
+                <h3>No articles in this category yet</h3>
+                <p>Check back soon — new articles are published regularly.</p>
+            </div>
+
+            <!-- CTA Band -->
+            <div class="blog-cta">
+                <h2>Have a structural challenge?</h2>
+                <p>Whether you need a forensic investigation, structural audit, or NDT assessment — our team is ready to help.</p>
+                <a href="contact.html" class="btn btn-accent" style="padding:14px 36px;font-size:1rem;">Get in Touch</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="./" class="logo" style="margin-bottom:20px;display:inline-block;">
+                        <img src="assets/images/logo_transparent.png" alt="Oville Associates Logo" style="height:85px;">
+                    </a>
+                    <p style="color:#ccc;">Building the Future with Precision &amp; Integrity</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="./">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Insights</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.google.com/?q=Pergola+Flats,+Jakaya+Kikwete+Road,+Nairobi" target="_blank" style="color:#ccc;"><i class="fas fa-map-marker-alt text-accent"></i> Milimani, Jakaya Kikwete Road</a></li>
+                        <li><a href="tel:+254720544343" style="color:#ccc;"><i class="fas fa-phone text-accent"></i> +254 720 544 343</a></li>
+                        <li><a href="mailto:info@ovilleassociates.com" style="color:#ccc;"><i class="fas fa-envelope text-accent"></i> info@ovilleassociates.com</a></li>
+                        <li><a href="https://www.linkedin.com/company/oville-associates/" target="_blank" style="color:#ccc;"><i class="fab fa-linkedin text-accent"></i> Our LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> Oville Associates. All Rights Reserved. | Designed by <a href="https://essenceautomations.com/" target="_blank">Essence Automations</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js?v=6012"></script>
+    <script src="https://widgets.leadconnectorhq.com/loader.js"
+        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+        data-widget-id="695781bbe3cb111b8ef7e5d9"></script>
+    <script src="https://link.essenceautomations.com/js/external-tracking.js"
+        data-tracking-id="tk_6d927793f58b41a581044ac398a0131d"></script>
+
+    <script>
+        // ── Category Filter ────────────────────────────────────────
+        const tabs = document.querySelectorAll('.cat-tab');
+        const cards = document.querySelectorAll('.filterable, .article-card, .articles-grid, .section-label');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const cat = tab.dataset.cat;
+
+                if (cat === 'all') {
+                    // Show everything
+                    document.querySelectorAll('.articles-grid').forEach(g => g.style.display = 'grid');
+                    document.querySelectorAll('.section-label').forEach(l => l.style.display = 'flex');
+                    document.querySelectorAll('.filterable').forEach(f => f.style.display = 'block');
+                    document.getElementById('no-results').style.display = 'none';
+                    return;
+                }
+
+                // Filter: hide grids not matching, show matching
+                let anyVisible = false;
+
+                // Featured article (filterable wrapper)
+                document.querySelectorAll('.filterable').forEach(f => {
+                    f.style.display = (f.dataset.cat === cat) ? 'block' : 'none';
+                    if (f.dataset.cat === cat) anyVisible = true;
+                });
+
+                // Article grids: show/hide entire grid based on whether cards match
+                document.querySelectorAll('.articles-grid').forEach(grid => {
+                    const matchingCards = grid.querySelectorAll(`[data-cat="${cat}"]`);
+                    const allCards = grid.querySelectorAll('.article-card');
+
+                    if (matchingCards.length > 0) {
+                        grid.style.display = 'grid';
+                        allCards.forEach(c => c.style.display = 'none');
+                        matchingCards.forEach(c => { c.style.display = 'flex'; anyVisible = true; });
+                    } else {
+                        grid.style.display = 'none';
+                    }
+                });
+
+                // Hide section labels for empty sections
+                document.querySelectorAll('.section-label').forEach(label => {
+                    const nextGrid = label.nextElementSibling;
+                    label.style.display = (nextGrid && nextGrid.style.display !== 'none') ? 'flex' : 'none';
+                });
+
+                document.getElementById('no-results').style.display = anyVisible ? 'none' : 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>
