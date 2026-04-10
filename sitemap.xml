@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ovilleassociates.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://ovilleassociates.com/about.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ovilleassociates.com/services.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ovilleassociates.com/portfolio.html</loc><priority>0.7</priority></url>
-  <url><loc>https://ovilleassociates.com/contact.html</loc><priority>0.6</priority></url>
+
+  <!-- Core pages -->
+  <url><loc>https://ovilleassociates.com/</loc><lastmod>2026-04-10</lastmod><priority>1.0</priority></url>
+  <url><loc>https://ovilleassociates.com/about.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ovilleassociates.com/services.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ovilleassociates.com/portfolio.html</loc><lastmod>2026-04-10</lastmod><priority>0.7</priority></url>
+  <url><loc>https://ovilleassociates.com/contact.html</loc><lastmod>2026-04-10</lastmod><priority>0.6</priority></url>
+
+  <!-- Blog index -->
+  <url><loc>https://ovilleassociates.com/blog.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
+
+  <!-- Forensic Engineering cluster -->
+  <url><loc>https://ovilleassociates.com/why-buildings-collapse-kenya.html</loc><lastmod>2026-04-10</lastmod><priority>0.9</priority></url>
+  <url><loc>https://ovilleassociates.com/what-is-forensic-engineering-kenya.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ovilleassociates.com/building-collapse-investigation-kenya.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ovilleassociates.com/root-cause-analysis-structural-failures.html</loc><lastmod>2026-04-10</lastmod><priority>0.7</priority></url>
+
+  <!-- Structural Audits cluster -->
+  <url><loc>https://ovilleassociates.com/structural-audit-kenya.html</loc><lastmod>2026-04-10</lastmod><priority>0.9</priority></url>
+  <url><loc>https://ovilleassociates.com/building-safety-audit-kenya-checklist.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ovilleassociates.com/structural-engineer-cost-kenya.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ovilleassociates.com/structural-assessment-vs-audit.html</loc><lastmod>2026-04-10</lastmod><priority>0.7</priority></url>
+
+  <!-- NDT & Testing cluster -->
+  <url><loc>https://ovilleassociates.com/non-destructive-testing-buildings-kenya.html</loc><lastmod>2026-04-10</lastmod><priority>0.9</priority></url>
+  <url><loc>https://ovilleassociates.com/ferroscan-testing-kenya.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ovilleassociates.com/schmidt-hammer-testing-kenya.html</loc><lastmod>2026-04-10</lastmod><priority>0.7</priority></url>
+  <url><loc>https://ovilleassociates.com/concrete-testing-nairobi.html</loc><lastmod>2026-04-10</lastmod><priority>0.7</priority></url>
+
+  <!-- High-Rise Design cluster -->
+  <url><loc>https://ovilleassociates.com/high-rise-structural-design-nairobi.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ovilleassociates.com/seismic-design-buildings-kenya.html</loc><lastmod>2026-04-10</lastmod><priority>0.7</priority></url>
+  <url><loc>https://ovilleassociates.com/structural-design-steep-terrain-nairobi.html</loc><lastmod>2026-04-10</lastmod><priority>0.7</priority></url>
+
+  <!-- Regulations cluster -->
+  <url><loc>https://ovilleassociates.com/kenya-building-codes-explained.html</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ovilleassociates.com/engineers-board-of-kenya-ebk.html</loc><lastmod>2026-04-10</lastmod><priority>0.7</priority></url>
+
 </urlset>
