@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Root Cause Analysis of Structural Failures: How Forensic Engineers Work | Oville Associates</title>
+    <meta name="description" content="How structural engineers carry out root cause analysis after a building failure: evidence preservation, sequence reconstruction, hypothesis testing, and reporting.">
+    <link rel="canonical" href="https://ovilleassociates.com/root-cause-analysis-structural-failures.html">
+    <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RDWB7CR3J3"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RDWB7CR3J3');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=6011">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Root Cause Analysis of Structural Failures: How Forensic Engineers Work","description":"How structural engineers carry out root cause analysis after a building failure: evidence preservation, sequence reconstruction, hypothesis testing, and reporting.","author":{"@type":"Organization","name":"Oville Associates","url":"https://ovilleassociates.com"},"publisher":{"@type":"Organization","name":"Oville Associates","logo":{"@type":"ImageObject","url":"https://ovilleassociates.com/assets/images/logo_transparent.png"}},"datePublished":"2026-04-10","url":"https://ovilleassociates.com/root-cause-analysis-structural-failures.html"}
+    </script>
+    <style>
+    .article-hero{background:linear-gradient(135deg,#0f112e 0%,#262a69 60%,#07afdf22 100%);padding:120px 0 60px;color:#fff;margin-top:0;}
+    .article-hero .breadcrumb{font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .article-hero .breadcrumb a{color:rgba(255,255,255,0.6);text-decoration:none;}
+    .article-hero .breadcrumb a:hover{color:#07afdf;}
+    .article-hero .breadcrumb i{font-size:0.7rem;}
+    .article-hero .category-badge{display:inline-block;background:#07afdf;color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:16px;}
+    .article-hero h1{font-family:'Outfit',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.15;max-width:800px;margin-bottom:20px;}
+    .article-meta{display:flex;gap:20px;flex-wrap:wrap;font-size:0.9rem;color:rgba(255,255,255,0.7);}
+    .article-meta span{display:flex;align-items:center;gap:6px;}
+    .article-meta i{color:#07afdf;}
+    .article-layout{display:grid;grid-template-columns:1fr 320px;gap:48px;padding:60px 0;}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;}}
+    .article-body{font-family:'Inter',sans-serif;font-size:1.05rem;line-height:1.8;color:#333;}
+    .article-body h2{font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:700;color:#262a69;margin:2rem 0 1rem;padding-bottom:8px;border-bottom:2px solid #07afdf;}
+    .article-body h3{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:700;color:#262a69;margin:1.5rem 0 0.75rem;}
+    .article-body p{margin-bottom:1.2rem;}
+    .article-body ul,.article-body ol{margin:1rem 0 1.2rem 1.5rem;}
+    .article-body li{margin-bottom:0.5rem;}
+    .article-body strong{color:#262a69;}
+    .article-body .highlight-box{background:#f0f7ff;border-left:4px solid #07afdf;padding:20px 24px;border-radius:0 8px 8px 0;margin:1.5rem 0;}
+    .article-body .highlight-box p{margin-bottom:0;}
+    .article-body table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.95rem;}
+    .article-body table th{background:#262a69;color:#fff;padding:10px 14px;text-align:left;}
+    .article-body table td{padding:10px 14px;border-bottom:1px solid #e5e5e5;}
+    .article-body table tr:nth-child(even) td{background:#f8f9ff;}
+    .article-sidebar{position:sticky;top:100px;height:fit-content;}
+    .sidebar-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:24px;margin-bottom:24px;}
+    .sidebar-card h4{font-family:'Outfit',sans-serif;color:#262a69;font-size:1rem;font-weight:700;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid #07afdf;}
+    .sidebar-card .cta-btn{display:block;background:#07afdf;color:#fff;text-align:center;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.95rem;margin-top:12px;transition:background 0.2s;}
+    .sidebar-card .cta-btn:hover{background:#059bb8;}
+    .related-link{display:flex;align-items:flex-start;gap:10px;text-decoration:none;color:#333;padding:10px 0;border-bottom:1px solid #f0f0f0;}
+    .related-link:last-child{border-bottom:none;}
+    .related-link i{color:#07afdf;margin-top:3px;flex-shrink:0;}
+    .related-link span{font-size:0.9rem;line-height:1.4;}
+    .related-link:hover span{color:#07afdf;}
+    .article-cta-section{background:linear-gradient(135deg,#262a69,#0f112e);padding:60px 0;text-align:center;color:#fff;}
+    .article-cta-section h2{font-family:'Outfit',sans-serif;font-size:1.8rem;margin-bottom:12px;}
+    .article-cta-section p{color:rgba(255,255,255,0.8);margin-bottom:24px;}
+    .author-box{background:#f8f9ff;border:1px solid #e5e5e5;border-radius:12px;padding:24px;margin:2rem 0;display:flex;gap:16px;align-items:center;}
+    .author-box .author-icon{width:56px;height:56px;background:#262a69;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .author-box .author-icon i{color:#07afdf;font-size:1.5rem;}
+    .author-box h4{font-family:'Outfit',sans-serif;color:#262a69;font-size:1rem;font-weight:700;margin-bottom:4px;}
+    .author-box p{font-size:0.875rem;color:#666;margin:0;}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="./" class="logo">
+                <img src="assets/images/logo_transparent.png" alt="Oville Associates Logo">
+            </a>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="./" class="nav-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fas fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#story" class="dropdown-item">Our Story</a>
+                        <a href="about.html#team" class="dropdown-item">The Team</a>
+                        <a href="about.html#compliance" class="dropdown-item">Compliance</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html#engineering" class="dropdown-item">Civil & Structural</a>
+                        <a href="services.html#forensic" class="dropdown-item">Forensic Engineering</a>
+                        <a href="services.html#pm" class="dropdown-item">Project Management</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="portfolio.html" class="nav-link">Portfolio <i class="fas fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="portfolio.html#featured" class="dropdown-item">Featured Projects</a>
+                        <a href="portfolio.html#clients" class="dropdown-item">Client List</a>
+                    </div>
+                </li>
+                <li><a href="blog.html" class="nav-link active">Insights</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-accent" style="padding: 8px 20px;">Let's Engage</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="article-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="./">Home</a><i class="fas fa-chevron-right"></i>
+                <a href="blog.html">Insights</a><i class="fas fa-chevron-right"></i>
+                <span>Root Cause Analysis</span>
+            </div>
+            <span class="category-badge">Forensic Engineering</span>
+            <h1>Root Cause Analysis of Structural Failures: How Forensic Engineers Work</h1>
+            <div class="article-meta">
+                <span><i class="fas fa-user"></i> Eng. Oville Team</span>
+                <span><i class="fas fa-calendar"></i> April 2026</span>
+                <span><i class="fas fa-clock"></i> 10 min read</span>
+            </div>
+        </div>
+    </section>
+    <section style="background:#f8f9ff;">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-body">
+                    <h2>What Root Cause Analysis Means in Structural Engineering</h2>
+                    <p><strong>Root cause analysis (RCA)</strong> is the disciplined process of working backwards from a structural failure to identify the underlying causes, not just the visible trigger. The collapse, the crack, the deflection - those are symptoms. The root cause is the chain of decisions, materials, and conditions that made the failure possible.</p>
+                    <p>Done well, RCA produces a defensible technical narrative that explains:</p>
+                    <ul>
+                        <li>What failed first (the initiating element or event)</li>
+                        <li>How the failure propagated through the structure</li>
+                        <li>Why that element was vulnerable in the first place</li>
+                        <li>What decisions, designs, materials or actions created the vulnerability</li>
+                        <li>What could have been done at any of those points to prevent the outcome</li>
+                    </ul>
+                    <p>The audience for an RCA is usually a court, an insurer, a regulator, or all three. The standard of evidence required is much higher than for a routine audit.</p>
+
+                    <h2>The Five Phases of a Structural RCA</h2>
+
+                    <h3>Phase 1: Site Securing and Evidence Preservation</h3>
+                    <p>The investigation begins the moment the failure is reported. Critical actions in the first 24-72 hours:</p>
+                    <ul>
+                        <li>Co-ordinate with County, NCA, police and emergency services to establish access</li>
+                        <li>Identify and preserve the failure debris field - locations of fallen elements must be recorded before any clearing</li>
+                        <li>Photograph the scene comprehensively from multiple angles before anything is moved</li>
+                        <li>Locate and secure original construction documents (drawings, calculations, materials certificates, cube test records)</li>
+                        <li>Identify witnesses: workers on site, occupants, neighbours, contractors. Get statements while memory is fresh</li>
+                        <li>Take material samples - rebar fragments, concrete chunks, soil at foundations - before they are lost</li>
+                    </ul>
+                    <p>Evidence lost in this phase cannot be recovered later. We have seen forensic cases collapse because the site was cleared within 48 hours of the incident on the instruction of the developer's insurer, before the structural investigator arrived.</p>
+
+                    <h3>Phase 2: Data Gathering</h3>
+                    <p>Once the scene is secured, systematic data collection:</p>
+                    <ul>
+                        <li>Detailed survey of the failure (3D laser scan where the geometry is complex)</li>
+                        <li>Mapping of crack patterns, deflections, and displacements on remaining elements</li>
+                        <li>Material testing - concrete cores, rebar samples, soil samples - sent to accredited labs</li>
+                        <li>Non-destructive testing of standing elements (Schmidt hammer, Ferroscan)</li>
+                        <li>Document review: original design, construction records, approval correspondence, maintenance logs, weather data, recent works on site</li>
+                        <li>Interviews with all relevant personnel</li>
+                    </ul>
+
+                    <h3>Phase 3: Reconstruction</h3>
+                    <p>From the data, the investigator builds a model of the structure as it was at the moment of failure. This includes:</p>
+                    <ul>
+                        <li>The intended design (as drawn and calculated)</li>
+                        <li>The as-built condition (where it differed from the design)</li>
+                        <li>The deteriorated condition at the time of failure (corrosion, carbonation, prior cracking)</li>
+                        <li>The loading at the moment of failure (live loads, environmental loads, any unusual event)</li>
+                    </ul>
+                    <p>Computational analysis often follows: finite-element models of the structure under the reconstructed loading, looking for the element that fails first when the analysis is run with realistic material properties.</p>
+
+                    <h3>Phase 4: Hypothesis Testing</h3>
+                    <p>Investigators rarely start with a single theory. They start with several plausible failure mechanisms and test each against the evidence:</p>
+                    <ol>
+                        <li>Overloading - was the load at failure greater than design?</li>
+                        <li>Material deficiency - was concrete strength or rebar specification below design?</li>
+                        <li>Design error - did the design meet code for the imposed loads?</li>
+                        <li>Construction defect - was the structure built as designed?</li>
+                        <li>Foundation failure - did the ground move or settle differentially?</li>
+                        <li>External event - was there impact, fire, or excavation nearby?</li>
+                        <li>Maintenance neglect - did long-term deterioration reduce capacity below the actual load?</li>
+                    </ol>
+                    <p>Each hypothesis must be consistent with <strong>all</strong> the evidence. If a hypothesis explains the column failure but cannot explain why the cracks ran in a particular pattern, it is not the right one. The right hypothesis explains every observation.</p>
+
+                    <h3>Phase 5: Reporting and Defence</h3>
+                    <p>The final report sets out:</p>
+                    <ul>
+                        <li>The factual record (what was observed, measured, tested)</li>
+                        <li>The methodology (how the analysis was carried out)</li>
+                        <li>The hypotheses considered and the basis on which each was accepted or rejected</li>
+                        <li>The conclusions on root cause, immediate cause, and contributory factors</li>
+                        <li>Recommendations - both for the specific case and for prevention of similar events</li>
+                    </ul>
+                    <p>The report must be defensible under cross-examination. Every conclusion must trace back to specific evidence. Every measurement must be referenced. Every assumption must be stated and justified.</p>
+
+                    <h2>Common Root Causes in Kenyan Building Failures</h2>
+                    <p>Across the failures Oville has investigated in Kenya, the underlying root causes cluster around a small number of themes:</p>
+
+                    <h3>1. Inadequate Foundations on Expansive or Compressible Soils</h3>
+                    <p>Black cotton, alluvial deposits and fill receive shallow foundations they cannot support. The collapse is triggered by a wet season or a nearby excavation, but the root cause is the foundation design.</p>
+
+                    <h3>2. Under-Strength Concrete in Critical Elements</h3>
+                    <p>Site-batched concrete reaches 60-70% of specified strength in columns and beams. Buildings stand for years until an additional load (another floor, change of use, accumulated dead load from new finishes) tips a critical element past its actual capacity.</p>
+
+                    <h3>3. Rebar Substitution or Omission</h3>
+                    <p>Specified rebar grade or quantity is not what was placed. Bars are missing from corners, links are spaced wider than design, or lower-grade imported rebar is used. Failure mode is brittle, with little warning.</p>
+
+                    <h3>4. Illegal Modifications</h3>
+                    <p>Floors added, columns removed, beams cut for service penetrations - all without engineering review. The structure no longer matches its design assumptions. Sometimes a partial collapse follows immediately; sometimes the structure stands until a marginal event tips it over.</p>
+
+                    <h3>5. Construction Sequence Errors</h3>
+                    <p>Formwork stripped too early. Slabs loaded with stacked blocks before achieving strength. Backfill placed against basement walls before the slab above is complete. Each error reduces margin, and combinations of errors eliminate it.</p>
+
+                    <h3>6. Maintenance Neglect</h3>
+                    <p>Roof leaks left unaddressed for years. Water tracks down through reinforced concrete, corrodes rebar from inside, and the building fails when corrosion section loss exceeds capacity. Common in older buildings in industrial zones.</p>
+
+                    <h2>RCA Tools and Frameworks</h2>
+
+                    <h3>The 5 Whys</h3>
+                    <p>Repeatedly asking "why" drills past symptoms to root causes:</p>
+                    <ul>
+                        <li>Why did the column fail? - Concrete was below design strength</li>
+                        <li>Why was concrete below strength? - Site batching gave variable mix</li>
+                        <li>Why did site batching produce variable mix? - No weigh-batching, mix by head pan</li>
+                        <li>Why was head-pan batching used? - No supervision insisted on calibrated batching</li>
+                        <li>Why no insistence on calibrated batching? - No EBK-registered engineer on site during construction</li>
+                    </ul>
+                    <p>The root cause is the supervision gap, not the column itself.</p>
+
+                    <h3>Fault Tree Analysis (FTA)</h3>
+                    <p>A top-down logic diagram. The top event ("column failed") is decomposed into all possible causes, each of which is decomposed further, until each branch reaches a basic event that either happened or did not.</p>
+
+                    <h3>Ishikawa (Fishbone) Diagram</h3>
+                    <p>The failure is the spine; the contributing categories (material, method, machine, manpower, environment, management) are the bones. Used to map all factors before testing each.</p>
+
+                    <h2>What an RCA Investigation Costs in Kenya</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scale of failure</th>
+                                <th>Investigation cost (KES)</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Single column failure, no casualties</td><td>250,000-500,000</td><td>3-5 weeks</td></tr>
+                            <tr><td>Partial collapse, no casualties</td><td>500,000-1,500,000</td><td>6-12 weeks</td></tr>
+                            <tr><td>Full collapse with casualties</td><td>1,500,000-5,000,000+</td><td>3-9 months</td></tr>
+                            <tr><td>Multi-site / portfolio investigation</td><td>5,000,000+</td><td>6-18 months</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Common Mistakes That Compromise an Investigation</h2>
+
+                    <h3>1. Clearing debris too soon</h3>
+                    <p>Insurer or developer pressure to "make the site safe" before the investigator arrives. Critical evidence is lost.</p>
+
+                    <h3>2. Single-hypothesis investigations</h3>
+                    <p>The investigator decides early what caused the failure and looks only for confirming evidence. Disconfirming evidence is dismissed or never sought. The eventual report cannot survive scrutiny.</p>
+
+                    <h3>3. Using only one method</h3>
+                    <p>Visual inspection alone, without NDT. Or analytical modelling without site measurement. The strongest RCAs triangulate from multiple independent sources.</p>
+
+                    <h3>4. Not interviewing the right people</h3>
+                    <p>The site foreman, the rebar fixer, the concrete supplier driver - these people know things the design team and the developer do not. Investigators who only talk to the principals miss key facts.</p>
+
+                    <h3>5. Mixing root cause with blame</h3>
+                    <p>RCA identifies causes, not culpability. Recommending sanctions in the report compromises its independence. Recommendations should be technical: "specify weigh-batching for concrete" not "the contractor was negligent."</p>
+
+                    <div class="highlight-box">
+                        <p>The purpose of an RCA is to prevent recurrence, not to allocate blame. Even when blame is the eventual outcome (in court or in arbitration), the technical RCA should be neutral so its findings hold up regardless of who is on which side.</p>
+                    </div>
+
+                    <h2>How Oville Carries Out Root Cause Investigations</h2>
+                    <p>Oville Associates carries out forensic root cause investigations across Kenya. We are typically engaged by insurers, courts, building owners, or regulators. Our investigations follow a documented methodology, use our own NDT capability (Schmidt hammer, Ferroscan, core sampling co-ordination), and produce reports that have been accepted in litigation and insurance settlements.</p>
+                    <p>We take instruction independently - meaning we do not pre-commit to a conclusion before evidence is gathered. The report goes where the evidence leads, even when that is uncomfortable for the engaging party. That is what makes the report defensible. Investigations that confirm whichever conclusion the client wanted are worthless the moment the other side's expert appears.</p>
+
+                    <div class="author-box">
+                        <div class="author-icon"><i class="fas fa-hard-hat"></i></div>
+                        <div>
+                            <h4>Eng. Oville Team</h4>
+                            <p>Oville Associates is an EBK-registered civil and structural engineering consultancy based in Nairobi, Kenya. We provide structural audits, forensic engineering, and project management across Kenya.</p>
+                        </div>
+                    </div>
+                </article>
+                <aside class="article-sidebar">
+                    <div class="sidebar-card">
+                        <h4>After an Incident</h4>
+                        <p style="font-size:0.9rem;color:#555;margin-bottom:0;">Oville carries out forensic root cause investigations following structural failures, fires, and impact events.</p>
+                        <a href="contact.html" class="cta-btn"><i class="fas fa-phone"></i> Engage an Investigator</a>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Related Articles</h4>
+                        <a href="why-buildings-collapse-kenya.html" class="related-link"><i class="fas fa-arrow-right"></i><span>Why Buildings Collapse in Kenya</span></a>
+                        <a href="what-is-forensic-engineering-kenya.html" class="related-link"><i class="fas fa-arrow-right"></i><span>What Is Forensic Engineering?</span></a>
+                        <a href="building-collapse-investigation-kenya.html" class="related-link"><i class="fas fa-arrow-right"></i><span>Building Collapse Investigation</span></a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+    <section class="article-cta-section">
+        <div class="container">
+            <h2>Get the Real Answer After a Failure</h2>
+            <p>Oville Associates carries out independent forensic investigations of structural failures across Kenya.</p>
+            <a href="contact.html" class="btn btn-accent" style="padding:14px 36px;font-size:1rem;">Contact Oville Associates</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="./" class="logo" style="margin-bottom: 20px; display: inline-block;">
+                        <img src="assets/images/logo_transparent.png" alt="Oville Associates Logo" style="height: 85px;">
+                    </a>
+                    <p style="color: #ccc;">Building the Future with Precision & Integrity</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="./">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Insights</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.google.com/?q=Pergola+Flats,+Jakaya+Kikwete+Road,+Nairobi" target="_blank" style="color: #ccc;"><i class="fas fa-map-marker-alt text-accent"></i> Milimani, Jakaya Kikwete Road</a></li>
+                        <li><a href="tel:+254720544343" style="color: #ccc;"><i class="fas fa-phone text-accent"></i> +254 720 544 343</a></li>
+                        <li><a href="mailto:info@ovilleassociates.com" style="color: #ccc;"><i class="fas fa-envelope text-accent"></i> info@ovilleassociates.com</a></li>
+                        <li><a href="https://www.linkedin.com/company/oville-associates/" target="_blank" style="color: #ccc;"><i class="fab fa-linkedin text-accent"></i> Our LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> Oville Associates. All Rights Reserved. | Designed by <a href="https://essenceautomations.com/" target="_blank">Essence Automations</a>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    <script src="js/script.js?v=6012"></script>
+</body>
+</html>
