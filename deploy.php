@@ -1,15 +1,30 @@
 <?php
-// Secret token to secure the webhook
-$secret_token = 'ovilledep2026';
+// Secret token lives outside the web root and outside git.
+// This repo is public, so the token must never be committed.
+$token_file = '/home/qtylnoyg/.oville_deploy_token';
 
-// Check token
+$secret_token = null;
+if (is_readable($token_file)) {
+    $secret_token = trim(file_get_contents($token_file));
+} elseif (getenv('OVILLE_DEPLOY_TOKEN')) {
+    $secret_token = trim(getenv('OVILLE_DEPLOY_TOKEN'));
+}
+
+// Fail closed: no configured token means nobody can deploy.
+if ($secret_token === null || $secret_token === '') {
+    header('HTTP/1.1 503 Service Unavailable');
+    die('Deploy token not configured');
+}
+
+// Check token. hash_equals avoids leaking the token via timing.
 $token = $_GET['token'] ?? '';
-if ($token !== $secret_token) {
+if (!hash_equals($secret_token, $token)) {
     header('HTTP/1.1 403 Forbidden');
     die('Forbidden');
 }
 
-$log_file = __DIR__ . '/deploy.log';
+// Log outside the web root so it is not publicly fetchable.
+$log_file = dirname(__DIR__) . '/deploy.log';
 file_put_contents($log_file, date('Y-m-d H:i:s') . " - Webhook triggered\n", FILE_APPEND);
 
 // Paths to check for the repository

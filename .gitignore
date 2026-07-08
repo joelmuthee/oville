@@ -31,3 +31,10 @@ node_modules/
 # Config
 mcp_config.json
 GHL-MODAL-FIX.md
+backup.ps1
+
+# Local scratch copies - must never reach public_html
+*-Joels-PC.html
+
+# Scratch - disposable, never commit
+.tmp/

@@ -1,5 +1,10 @@
 RewriteEngine On
 
+# Never serve dev artefacts, even if a deploy copies one in by mistake.
+<FilesMatch "\.(ps1|md|log|yml|json)$">
+    Require all denied
+</FilesMatch>
+
 # Redirect index.html to root /
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
 RewriteRule ^index\.html$ / [R=301,L]

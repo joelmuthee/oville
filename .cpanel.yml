@@ -4,3 +4,7 @@ deployment:
     - export DEPLOYPATH=/home/qtylnoyg/public_html/
     - /bin/cp -R * $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH || true
+    # Purge files from earlier deploys that should never have been public.
+    # cp -R never deletes, so removing them from git is not enough.
+    - /bin/rm -f $DEPLOYPATH/backup.ps1 $DEPLOYPATH/log.txt $DEPLOYPATH/mcp_config.json $DEPLOYPATH/GHL-MODAL-FIX.md $DEPLOYPATH/deploy.log
+    - /bin/rm -f $DEPLOYPATH/*-Joels-PC.html
